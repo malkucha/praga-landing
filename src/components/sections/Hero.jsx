@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-[70vh] flex items-center overflow-hidden"
     >
       {/* Split Layout Container */}
       <div className="w-full grid lg:grid-cols-2 min-h-screen">
@@ -15,7 +15,7 @@ const Hero = () => {
           <img 
             src={heroImage}
             alt="Centro de estética Praga - Ambiente elegante y relajante"
-            className="w-full h-full object-cover"
+            className="w-full h-full max-h-screen object-cover"
           />
           {/* Subtle overlay on image */}
           <div className="absolute inset-0 bg-praga-gold/10"></div>

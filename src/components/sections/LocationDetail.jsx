@@ -43,13 +43,6 @@ const LocationDetail = ({ locationId }) => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <button
-            onClick={() => document.getElementById('locations').scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center space-x-2 text-praga-gray hover:text-praga-gold transition-colors duration-300"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span className="font-medium">Volver a Sucursales</span>
-          </button>
         </motion.div>
 
         {/* Header */}
