@@ -1,0 +1,57 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular con gradiente -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9f4ef;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4b9a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9e8f7e;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9e8f7e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4b9a6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sombra del texto -->
+    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1" flood-color="#3e3e3e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo circular -->
+  <circle cx="100" cy="100" r="90" fill="url(#backgroundGradient)" stroke="#9e8f7e" stroke-width="2"/>
+  
+  <!-- Elementos decorativos -->
+  <circle cx="60" cy="60" r="3" fill="#d4b9a6" opacity="0.6"/>
+  <circle cx="140" cy="140" r="2" fill="#9e8f7e" opacity="0.8"/>
+  <circle cx="140" cy="60" r="2.5" fill="#d4b9a6" opacity="0.5"/>
+  <circle cx="60" cy="140" r="2" fill="#9e8f7e" opacity="0.7"/>
+  
+  <!-- Texto Principal "Praga" -->
+  <text x="100" y="110" text-anchor="middle" font-family="Playfair Display, serif" font-size="32" font-weight="700" fill="url(#textGradient)" filter="url(#textShadow)">
+    Praga
+  </text>
+  
+  <!-- Subtítulo -->
+  <text x="100" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="#3e3e3e" opacity="0.8">
+    ESTÉTICA
+  </text>
+  
+  <!-- Línea decorativa -->
+  <line x1="70" y1="85" x2="130" y2="85" stroke="#d4b9a6" stroke-width="1" opacity="0.6"/>
+</svg>
+526 -76 150 -128 223 -394 551 -265 328 -369 474 -449 631 -116 229 -156 439
+-125 658 11 74 72 274 96 313 21 33 37 28 30 -10z m-272 -570 c-10 -222 18
+-373 104 -543 66 -133 145 -236 344 -447 462 -490 599 -723 615 -1039 13 -268
+-75 -524 -280 -811 -81 -114 -248 -305 -332 -380 -121 -108 -304 -258 -314
+-258 -10 0 15 45 64 116 10 16 78 107 149 203 71 96 158 218 194 270 123 185
+233 450 262 633 16 101 8 297 -14 363 -62 180 -152 317 -408 620 -211 250
+-310 387 -381 531 -101 201 -137 403 -107 594 10 61 61 233 82 273 22 43 28
+12 22 -125z m2713 54 c67 -167 81 -412 34 -577 -65 -230 -168 -395 -466 -750
+-253 -301 -332 -418 -394 -585 -35 -94 -36 -97 -35 -245 0 -131 3 -163 28
+-255 31 -118 62 -200 116 -310 76 -154 122 -224 315 -485 149 -200 228 -316
+221 -323 -12 -12 -306 239 -422 361 -331 346 -514 714 -514 1032 0 244 84 450
+294 719 80 102 130 159 411 466 190 207 291 374 338 560 19 73 22 113 22 283
+0 123 4 196 10 194 5 -2 24 -40 42 -85z"/>
+</g>
+</svg>

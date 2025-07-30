@@ -1,0 +1,35 @@
+/* App specific styles for Praga */
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll offset for fixed navbar */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f4ef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9e8f7e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b5a394;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #9e8f7e;
+  outline-offset: 2px;
+}
