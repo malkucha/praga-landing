@@ -1,11 +1,17 @@
+# Netlify configuration - This file overrides any settings in the web interface
+# Build: npm run build (JavaScript only, no TypeScript)
+# Deploy: dist folder
+
 [build]
   command = "npm run build"
   publish = "dist"
-  functions = "netlify/functions"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_VERSION = "9"
   DISABLE_TYPESCRIPT = "true"
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"
