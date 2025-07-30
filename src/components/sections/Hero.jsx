@@ -43,6 +43,18 @@ const Hero = () => {
               >
                 Centro de estética dedicado a realzar tu belleza natural con tratamientos personalizados y tecnología de vanguardia
               </motion.p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+                <a href="#services" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">Conoce nuestros servicios</a>
+                <a href="#appointments" className="btn-secondary text-lg px-8 py-4 w-full sm:w-auto text-center">Reservar turno</a>
+              </div>
+              <div className="mt-2 text-center">
+                <a href="#locations" className="inline-flex items-center text-praga-gray-light hover:text-praga-gold transition-colors duration-300 group">
+                  <span className="text-sm uppercase tracking-wider font-medium mr-2">Ver nuestras sucursales</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
