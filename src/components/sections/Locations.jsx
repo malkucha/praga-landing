@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, ArrowRight } from 'lucide-react';
 import { locations } from '../../data/locations';
 
-const Locations = () => {
+const Locations = ({ onNavigateToSucursal }) => {
   return (
     <section id="locations" className="section-padding bg-praga-white">
       <div className="container-custom">
@@ -94,25 +94,37 @@ const Locations = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={`https://wa.me/${location.whatsapp}?text=Hola! Me gustaría reservar un turno en ${location.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary text-center flex-1"
-                >
-                  Reservar turno
-                </a>
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={`https://wa.me/${location.whatsapp}?text=Hola! Me gustaría reservar un turno en ${location.name}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-center flex-1"
+                  >
+                    Reservar turno
+                  </a>
+                  
+                  <a
+                    href={location.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary text-center flex-1 flex items-center justify-center"
+                  >
+                    <Navigation className="w-4 h-4 mr-2" />
+                    Ver en Google Maps
+                  </a>
+                </div>
                 
-                <a
-                  href={location.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-center flex-1 flex items-center justify-center"
-                >
-                  <Navigation className="w-4 h-4 mr-2" />
-                  Ver en Google Maps
-                </a>
+                {onNavigateToSucursal && (
+                  <button
+                    onClick={() => onNavigateToSucursal(location.id)}
+                    className="w-full bg-praga-gold text-white hover:bg-praga-gold-light font-semibold py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-center space-x-2 group hover:scale-105"
+                  >
+                    <span>Ver detalles completos</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}

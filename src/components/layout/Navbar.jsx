@@ -1,28 +1,54 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Instagram } from 'lucide-react';
+import { Menu, X, Instagram, ChevronDown } from 'lucide-react';
 import logoHorizontal from '../../assets/logo-praga-horizontal.svg';
+import { locations } from '../../data/locations';
 
-const Navbar = () => {
+const Navbar = ({ onNavigateToSucursal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown-container')) {
+        setIsDropdownOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
 
   const navItems = [
     { name: 'Inicio', href: '#hero' },
     { name: 'Servicios', href: '#services' },
+    { name: 'Promociones', href: '#promotions' },
     { name: 'Nosotros', href: '#about' },
-    { name: 'Sucursales', href: '#locations' },
+    { name: 'Sucursales', href: '#locations', hasDropdown: true },
     { name: 'Tienda', href: '#shop' },
     { name: 'Testimonios', href: '#testimonials' },
   ];
+
+  const handleSucursalClick = (locationId) => {
+    if (onNavigateToSucursal) {
+      onNavigateToSucursal(locationId);
+    }
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleDropdownItemClick = () => {
+    setIsDropdownOpen(false);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -44,13 +70,49 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </a>
+              <div key={item.name} className="relative">
+                {item.hasDropdown ? (
+                  <div className="relative dropdown-container">
+                    <button
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="flex items-center space-x-1 text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium"
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    {isDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-praga-gray-light/20 py-2 z-50">
+                        <a
+                          href="#locations"
+                          onClick={handleDropdownItemClick}
+                          className="block px-4 py-3 text-praga-gray hover:text-praga-gold hover:bg-praga-beige/30 transition-colors duration-300 font-medium border-b border-praga-gray-light/20"
+                        >
+                          Ver todas las sucursales
+                        </a>
+                        {locations.map((location) => (
+                          <button
+                            key={location.id}
+                            onClick={() => handleSucursalClick(location.id)}
+                            className="w-full text-left px-4 py-3 text-praga-gray hover:text-praga-gold hover:bg-praga-beige/30 transition-colors duration-300"
+                          >
+                            <div className="font-medium">{location.name}</div>
+                            <div className="text-sm text-praga-gray-light">{location.address}</div>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium"
+                  >
+                    {item.name}
+                  </a>
+                )}
+              </div>
             ))}
             
             {/* Instagram Link */}
@@ -95,14 +157,39 @@ const Navbar = () => {
             <div className="container-custom py-4">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
+                  <div key={item.name}>
+                    {item.hasDropdown ? (
+                      <div>
+                        <a
+                          href={item.href}
+                          className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium py-2 block"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </a>
+                        <div className="ml-4 mt-2 space-y-2">
+                          {locations.map((location) => (
+                            <button
+                              key={location.id}
+                              onClick={() => handleSucursalClick(location.id)}
+                              className="block text-left text-praga-gray-light hover:text-praga-gold transition-colors duration-300 py-1"
+                            >
+                              <div className="font-medium text-sm">{location.name}</div>
+                              <div className="text-xs text-praga-gray-light">{location.address}</div>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium py-2 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    )}
+                  </div>
                 ))}
                 
                 {/* Instagram Link Mobile */}

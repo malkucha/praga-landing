@@ -1,8 +1,17 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Calendar, Clock, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { locations } from '../../data/locations';
 
-const Appointments = () => {
+const Appointments = ({ focusedLocation }) => {
+  const [displayLocations, setDisplayLocations] = useState(locations);
+
+  useEffect(() => {
+    const newDisplayLocations = focusedLocation 
+      ? locations.filter(loc => loc.id === focusedLocation)
+      : locations;
+    setDisplayLocations(newDisplayLocations);
+  }, [focusedLocation]);
   const handleWhatsAppClick = (location) => {
     const message = `Hola! Me gustaría reservar un turno en ${location.name}. ¿Podrían ayudarme con la disponibilidad?`;
     const url = `https://wa.me/${location.whatsapp.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
@@ -48,8 +57,10 @@ const Appointments = () => {
             </h2>
           </div>
           <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
-            Agenda tu cita de forma rápida y sencilla. Nuestro equipo está listo 
-            para brindarte la mejor experiencia en estética y belleza.
+            {focusedLocation 
+              ? `Agenda tu cita en ${displayLocations[0]?.name}. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.`
+              : 'Agenda tu cita de forma rápida y sencilla. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.'
+            }
           </p>
         </motion.div>
 
@@ -135,14 +146,16 @@ const Appointments = () => {
               </h3>
               
               <p className="text-praga-gray-light mb-8 leading-relaxed">
-                Elegí tu sucursal preferida y contactanos por WhatsApp para coordinar tu cita. 
-                Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.
+                {focusedLocation
+                  ? `Contactanos por WhatsApp para coordinar tu cita en ${displayLocations[0]?.name}. Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.`
+                  : 'Elegí tu sucursal preferida y contactanos por WhatsApp para coordinar tu cita. Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.'
+                }
               </p>
             </div>
 
             {/* Location Selection Buttons */}
             <div className="space-y-4 mb-6">
-              {locations.map((location, index) => (
+              {displayLocations.map((location, index) => (
                 <motion.button
                   key={location.name}
                   onClick={() => handleWhatsAppClick(location)}
@@ -176,7 +189,7 @@ const Appointments = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                {locations.map((location) => (
+                {displayLocations.map((location) => (
                   <a
                     key={location.name}
                     href={`tel:${location.phone}`}
