@@ -119,9 +119,9 @@ const Locations = ({ onNavigateToSucursal }) => {
                 {onNavigateToSucursal && (
                   <button
                     onClick={() => onNavigateToSucursal(location.id)}
-                    className="w-full bg-praga-gold text-white hover:bg-praga-gold-light font-semibold py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-center space-x-2 group hover:scale-105"
+                    className="w-full bg-praga-gold text-praga-gray-dark hover:bg-praga-gold-light font-bold py-3 px-4 rounded-full transition-all duration-300 flex items-center justify-center space-x-2 group hover:scale-105 mt-4 shadow-lg border border-praga-gray-dark/20"
                   >
-                    <span>Ver detalles completos</span>
+                    <span>Descubrí esta sucursal</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 )}

@@ -137,27 +137,38 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
             </a>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button - Adaptado a diferentes tamaños */}
+          <div className="hidden sm:block">
             <a
               href="#appointments"
-              className="btn-primary"
+              className="btn-primary md:px-4 md:py-2 lg:px-6 lg:py-2.5 md:text-sm lg:text-base"
             >
-              Reservá tu Turno
+              <span className="md:hidden lg:inline">Reservá tu Turno</span>
+              <span className="hidden md:inline lg:hidden">Reservá</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          <div className="flex items-center">
+            {/* Botón CTA mini para móvil */}
+            <a
+              href="#appointments"
+              className="sm:hidden mr-2 btn-primary px-3 py-1.5 text-xs"
+            >
+              Reservá
+            </a>
+
+            <button
+              className="md:hidden p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-praga-gray" />
             ) : (
               <Menu className="w-6 h-6 text-praga-gray" />
             )}
           </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -214,14 +225,6 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                     <Instagram className="w-5 h-5" />
                   </div>
                   <span className="font-medium">@pragacba</span>
-                </a>
-                
-                <a
-                  href="#appointments"
-                  className="btn-primary text-center mt-4"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Reservá tu Turno
                 </a>
               </div>
             </div>

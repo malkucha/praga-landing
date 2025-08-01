@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Instagram, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { locations } from '../../data/locations';
+import logoHorizontal from '../../assets/logo-praga-horizontal.svg';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,46 +14,37 @@ const Footer = () => {
     { day: 'Domingos', hours: locations[0].schedule.sunday.split(': ')[1] }
   ];
 
-  const services = [
-    'Tratamientos Faciales',
-    'Depilación Láser',
-    'Mesoterapia',
-    'Radiofrecuencia',
-    'Limpieza Profunda',
-    'Lifting de Pestañas'
-  ];
-
   return (
     <footer className="bg-praga-gray text-praga-white">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between gap-8">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-1"
+            className="flex flex-col items-center lg:items-start"
           >
-            <h3 className="text-3xl font-display font-bold text-praga-gold mb-4">
-              Praga
-            </h3>
-            <p className="text-praga-white/80 mb-6 leading-relaxed">
-              Tu centro de estética de confianza en Córdoba. 
-              Especialistas en tratamientos de belleza personalizados 
-              con la más alta calidad y profesionalismo.
-            </p>
+            <img 
+              src={logoHorizontal} 
+              alt="Praga Estética" 
+              className="h-14 md:h-16 w-auto transition-all duration-300 hover:scale-105 mb-4"
+            />
             
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div className="flex items-center justify-center lg:justify-start w-full">
               <a
                 href="https://www.instagram.com/pragacba/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-praga-gold/20 rounded-full flex items-center justify-center hover:bg-praga-gold hover:scale-110 transition-all duration-300"
-              >
-                <Instagram className="w-5 h-5" />
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center group"
+                >
+                <span className="text-xs text-praga-white/80 mr-0 group-hover:text-praga-gold transition-colors">Seguinos en</span>
+                <div className="w-10 h-10 -ml-0.5 bg-praga-gold/20 rounded-full flex items-center justify-center group-hover:bg-praga-gold group-hover:scale-110 transition-all duration-300">
+                  <Instagram className="w-4 h-4" />
+                </div>
               </a>
             </div>
           </motion.div>
@@ -62,11 +55,8 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-2"
+            className="flex-1"
           >
-            <h4 className="text-xl font-heading font-semibold text-praga-gold mb-6">
-              Nuestras Sucursales
-            </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {locations.map((location, index) => (
                 <div key={index} className="bg-praga-white/10 rounded-2xl p-4">
@@ -99,43 +89,22 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:w-64"
           >
-            <h4 className="text-xl font-heading font-semibold text-praga-gold mb-6">
-              <Clock className="w-5 h-5 inline-block mr-2" />
-              Horarios
-            </h4>
-            <div className="space-y-3">
-              {schedule.map((item, index) => (
-                <div key={index} className="text-praga-white/80">
-                  <div className="font-medium">{item.day}</div>
-                  <div className="text-sm text-praga-gold">{item.hours}</div>
-                </div>
-              ))}
+            <div className="flex justify-center gap-6">
+              <div className="text-praga-white/80 text-center">
+                <div className="font-medium">{schedule[0].day}</div>
+                <div className="text-sm text-praga-gold">{schedule[0].hours}</div>
+              </div>
+              <div className="text-praga-white/80 text-center">
+                <div className="font-medium">{schedule[1].day}</div>
+                <div className="text-sm text-praga-gold">{schedule[1].hours}</div>
+              </div>
             </div>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <h4 className="text-xl font-heading font-semibold text-praga-gold mb-6">
-              Servicios
-            </h4>
-            <ul className="space-y-2">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a
-                    href="#services"
-                    className="text-praga-white/80 hover:text-praga-gold transition-colors duration-300 text-sm"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="text-praga-white/80 text-center mt-3">
+              <div className="font-medium">Domingos</div>
+              <div className="text-sm text-praga-gold">Cerrado</div>
+            </div>
           </motion.div>
         </div>
       </div>
