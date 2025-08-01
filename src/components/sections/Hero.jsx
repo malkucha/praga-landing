@@ -44,7 +44,7 @@ const Hero = () => {
                 Centro de estética dedicado a realzar tu belleza natural con tratamientos personalizados y tecnología de vanguardia
               </motion.p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-                <a href="#services" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">Conocé nuestros servicios</a>
+                <a href="#services" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">Nuestros servicios</a>
                 <a href="#appointments" className="btn-secondary text-lg px-8 py-4 w-full sm:w-auto text-center">Reservá tu turno</a>
               </div>
               <div className="mt-2 text-center">
@@ -74,7 +74,7 @@ const Hero = () => {
             Centro de estética dedicado a realzar tu belleza natural con tratamientos personalizados y tecnología de vanguardia
           </p>
           <div className="flex flex-col gap-4 w-full max-w-xs mx-auto">
-            <a href="#services" className="btn-primary text-lg px-8 py-4 w-full text-center">Conocé nuestros servicios</a>
+            <a href="#services" className="btn-primary text-lg px-8 py-4 w-full text-center">Nuestros servicios</a>
             <a href="#appointments" className="btn-secondary text-lg px-8 py-4 w-full text-center">Reservá tu turno</a>
             <a href="#locations" className="inline-flex items-center justify-center text-white hover:text-praga-gold transition-colors duration-300 group mt-2">
               <span className="text-sm uppercase tracking-wider font-medium mr-2">Mirá nuestras sucursales</span>
