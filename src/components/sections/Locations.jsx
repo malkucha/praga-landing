@@ -149,7 +149,7 @@ const Locations = ({ onNavigateToSucursal }) => {
               href="https://wa.me/5493515488483?text=Hola! Me gustaría información sobre las sucursales de Praga"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-praga-gold text-praga-white px-8 py-3 rounded-full font-semibold hover:bg-praga-gold-light hover:scale-105 transition-all duration-300 shadow-lg"
+              className="btn-secondary inline-block font-semibold hover:scale-105 transition-all duration-300"
             >
               Contactar por WhatsApp
             </a>

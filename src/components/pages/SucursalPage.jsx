@@ -13,7 +13,7 @@ const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal }) => {
   return (
     <div className="sucursal-page">
       {/* Fixed Navigation */}
-      <Navbar onNavigateToSucursal={onNavigateToSucursal} />
+      <Navbar onNavigateToSucursal={onNavigateToSucursal} isLanding={false} />
       
       {/* Back to Landing Button */}
       <div className="bg-white border-b border-praga-gray-light/20 sticky top-[80px] z-40">

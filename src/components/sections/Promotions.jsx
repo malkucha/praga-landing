@@ -135,7 +135,7 @@ const Promotions = () => {
                 <a
                   key={location.id}
                   href={`#${location.id}-detail`}
-                  className="inline-block bg-praga-gold hover:bg-praga-gold-light text-praga-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+                  className="btn-secondary inline-block font-semibold hover:scale-105 transition-all duration-300"
                 >
                   Ver promociones en {location.name.replace('PRAGA | ', '')}
                 </a>

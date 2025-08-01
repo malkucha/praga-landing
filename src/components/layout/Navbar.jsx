@@ -3,7 +3,7 @@ import { Menu, X, Instagram, ChevronDown } from 'lucide-react';
 import logoHorizontal from '../../assets/logo-praga-horizontal.svg';
 import { locations } from '../../data/locations';
 
-const Navbar = ({ onNavigateToSucursal }) => {
+const Navbar = ({ onNavigateToSucursal, isLanding }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = ({ onNavigateToSucursal }) => {
   }, []);
 
   const navItems = [
-    { name: 'Inicio', href: '#hero' },
+    // { name: 'Inicio', href: '#hero' },
     { name: 'Servicios', href: '#services' },
     { name: 'Promociones', href: '#promotions' },
     { name: 'Nosotros', href: '#about' },
@@ -59,13 +59,23 @@ const Navbar = ({ onNavigateToSucursal }) => {
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <a href="#hero" className="flex items-center">
+          <button
+            className="flex items-center focus:outline-none"
+            onClick={() => {
+              if (isLanding) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else if (onNavigateToSucursal) {
+                onNavigateToSucursal(null);
+              }
+            }}
+            aria-label="Ir a la página de inicio"
+          >
             <img 
               src={logoHorizontal} 
               alt="Praga Estética" 
               className="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105"
             />
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -98,7 +108,6 @@ const Navbar = ({ onNavigateToSucursal }) => {
                             className="w-full text-left px-4 py-3 text-praga-gray hover:text-praga-gold hover:bg-praga-beige/30 transition-colors duration-300"
                           >
                             <div className="font-medium">{location.name}</div>
-                            <div className="text-sm text-praga-gray-light">{location.address}</div>
                           </button>
                         ))}
                       </div>

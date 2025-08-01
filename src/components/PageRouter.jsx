@@ -14,8 +14,13 @@ const PageRouter = () => {
   };
 
   const navigateToSucursal = (locationId) => {
-    setCurrentPage('sucursal');
-    setCurrentLocation(locationId);
+    if (locationId == null) {
+      setCurrentPage('landing');
+      setCurrentLocation(null);
+    } else {
+      setCurrentPage('sucursal');
+      setCurrentLocation(locationId);
+    }
   };
 
   // Render the appropriate page

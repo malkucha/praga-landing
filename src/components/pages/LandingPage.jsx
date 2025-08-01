@@ -16,7 +16,7 @@ const LandingPage = ({ onNavigateToSucursal }) => {
   return (
     <div className="landing-page">
       {/* Fixed Navigation */}
-      <Navbar onNavigateToSucursal={onNavigateToSucursal} />
+      <Navbar onNavigateToSucursal={onNavigateToSucursal} isLanding={true} />
       
       {/* Main Content */}
       <main>
