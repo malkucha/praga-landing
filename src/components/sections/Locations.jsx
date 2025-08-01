@@ -102,7 +102,7 @@ const Locations = ({ onNavigateToSucursal }) => {
                     rel="noopener noreferrer"
                     className="btn-primary text-center flex-1"
                   >
-                    Reservar turno
+                    Reservá tu turno
                   </a>
                   
                   <a
@@ -151,7 +151,7 @@ const Locations = ({ onNavigateToSucursal }) => {
               rel="noopener noreferrer"
               className="btn-secondary inline-block font-semibold hover:scale-105 transition-all duration-300"
             >
-              Contactar por WhatsApp
+              Contactanos por WhatsApp
             </a>
           </div>
         </motion.div>

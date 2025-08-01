@@ -99,7 +99,7 @@ const LocationDetail = ({ locationId }) => {
                 className="btn-primary flex-1 flex items-center justify-center space-x-2"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Contactar por WhatsApp</span>
+                <span>Contactanos por WhatsApp</span>
               </button>
               
               <a

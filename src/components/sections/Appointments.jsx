@@ -58,8 +58,8 @@ const Appointments = ({ focusedLocation }) => {
           </div>
           <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
             {focusedLocation 
-              ? `Agenda tu cita en ${displayLocations[0]?.name}. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.`
-              : 'Agenda tu cita de forma rápida y sencilla. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.'
+              ? `Agendá tu cita en ${displayLocations[0]?.name}. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.`
+              : 'Agendá tu cita de forma rápida y sencilla. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.'
             }
           </p>
         </motion.div>
@@ -142,7 +142,7 @@ const Appointments = ({ focusedLocation }) => {
               </div>
               
               <h3 className="text-3xl font-display font-bold text-praga-gray mb-4">
-                ¡Agenda ahora!
+                ¡Agendá ahora!
               </h3>
               
               <p className="text-praga-gray-light mb-8 leading-relaxed">
@@ -175,7 +175,7 @@ const Appointments = ({ focusedLocation }) => {
                     </div>
                   </div>
                   <div className="text-right text-sm">
-                    <div>Reservar</div>
+                    <div>Reservá tu</div>
                     <div className="opacity-90">WhatsApp</div>
                   </div>
                 </motion.button>
@@ -185,7 +185,7 @@ const Appointments = ({ focusedLocation }) => {
             {/* Alternative Contact */}
             <div className="text-center">
               <p className="text-sm text-praga-gray-light mb-4">
-                ¿Prefieres llamar por teléfono?
+                ¿Preferís llamar por teléfono?
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

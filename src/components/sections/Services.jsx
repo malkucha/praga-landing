@@ -48,8 +48,8 @@ const Services = () => {
             Nuestros <span className="text-gradient">Servicios</span>
           </h2>
           <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
-            Descubre nuestra amplia gama de tratamientos diseñados para realzar tu belleza 
-            natural y brindarte la confianza que mereces
+            Descubrí nuestra amplia gama de tratamientos diseñados para realzar tu belleza 
+            natural y brindarte la confianza que merecés
           </p>
         </motion.div>
 
@@ -112,7 +112,7 @@ const Services = () => {
           className="text-center mt-16"
         >
           <p className="text-lg text-praga-gray-light mb-8">
-            ¿No encuentras el tratamiento que buscas?
+            ¿No encontrás el tratamiento que buscás?
           </p>
           <a
             href="#contact"

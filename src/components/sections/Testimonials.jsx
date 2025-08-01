@@ -60,7 +60,7 @@ const Testimonials = () => {
           </h2>
           <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
             La satisfacción de nuestras clientas es nuestra mayor recompensa. 
-            Descubre sus experiencias y transformaciones.
+            Descubrí sus experiencias y transformaciones.
           </p>
         </motion.div>
 

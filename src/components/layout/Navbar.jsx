@@ -143,7 +143,7 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
               href="#appointments"
               className="btn-primary"
             >
-              Reservar Turno
+              Reservá tu Turno
             </a>
           </div>
 
@@ -221,7 +221,7 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                   className="btn-primary text-center mt-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Reservar Turno
+                  Reservá tu Turno
                 </a>
               </div>
             </div>

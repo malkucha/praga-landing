@@ -62,7 +62,7 @@ export const promotions = [
     validUntil: '31/12/2025',
     locations: ['nueva-cordoba'],
     image: 'promo-novias.jpg',
-    terms: 'Reservar con 30 días de anticipación. Incluye prueba previa.',
+    terms: 'Reservá tu con 30 días de anticipación. Incluye prueba previa.',
     featured: false
   },
   {

@@ -118,7 +118,7 @@ const Shop = () => {
           </h3>
           
           <p className="text-lg text-praga-gray-light mb-8 max-w-2xl mx-auto">
-            Descubre nuestra línea completa de productos de cosmética profesional. 
+            Descubrí nuestra línea completa de productos de cosmética profesional. 
             Envíos a todo el país y asesoramiento personalizado incluido.
           </p>
 
