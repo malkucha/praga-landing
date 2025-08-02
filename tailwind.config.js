@@ -9,21 +9,21 @@ export default {
       colors: {
         // Paleta personalizada para Praga
         'praga': {
-          'beige': '#f9f4ef',      // Fondo principal
+          'beige': '#fbf6f1ff',      // Fondo principal
           'beige-dark': '#f0e6d6',  // Beige más oscuro
-          'gold': '#9e8f7e',       // Dorado suave
-          'gold-light': '#b5a394', // Dorado claro
-          'rose': '#d4b9a6',       // Rosa empolvado
-          'rose-light': '#e6d0c1', // Rosa más claro
-          'gray': '#3e3e3e',       // Gris oscuro para texto
-          'gray-light': '#8a8a8a', // Gris claro
+          'gold': '#aa6730',       // Dorado suave
+          'gold-light': '#d9945b', // Dorado claro
+          'gray': '#a8a8a8',       // Gris oscuro para texto
+          'gray-light': '#cccccc', // Gris claro
           'white': '#ffffff',      // Blanco puro
+          'black': '#000000',      // Negro puro para texto
         }
       },
-      fontFamily: {
-        'display': ['Playfair Display', 'serif'],
-        'heading': ['Poppins', 'sans-serif'],
-        'body': ['Inter', 'sans-serif'],
+     fontFamily: {
+        display: ['Great Vibes', 'cursive'],       // Para títulos decorativos como "amistad"
+        heading: ['Poppins', 'sans-serif'],        // Para títulos generales y botones
+        body: ['Inter', 'sans-serif'],             // Para texto general y lectura
+        detail: ['Raleway', 'sans-serif'],         // Para fechas, info fina, promociones
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-out',

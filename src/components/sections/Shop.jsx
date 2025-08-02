@@ -96,7 +96,7 @@ const Shop = () => {
               Nuestra <span className="text-gradient">Tienda</span>
             </h2>
           </div>
-          <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-praga-gray-light font-body max-w-3xl mx-auto leading-relaxed">
             Productos de cosmética profesional seleccionados especialmente para 
             potenciar los resultados de tus tratamientos en casa
           </p>
@@ -139,7 +139,7 @@ const Shop = () => {
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-praga-gold group-hover:w-full transition-all duration-300"></span>
                       </h3>
                       
-                      <p className="text-praga-gray-light text-sm mb-3">
+                      <p className="text-praga-gray-light font-detail text-sm mb-3">
                         {product.description}
                       </p>
 
@@ -158,7 +158,7 @@ const Shop = () => {
                       </div>
 
                       {/* Price */}
-                      <p className="text-2xl font-bold text-praga-gold mb-4">
+                      <p className="text-2xl font-heading font-bold text-praga-gold mb-4">
                         {product.price}
                       </p>
 
@@ -228,7 +228,7 @@ const Shop = () => {
             Explora toda nuestra colección
           </h3>
           
-          <p className="text-lg text-praga-gray-light mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-praga-gray-light font-body mb-8 max-w-2xl mx-auto">
             Descubrí nuestra línea completa de productos de cosmética profesional. 
             Envíos a todo el país y asesoramiento personalizado incluido.
           </p>

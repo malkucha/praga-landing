@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Instagram, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { locations } from '../../data/locations';
-import logoHorizontal from '../../assets/logo-praga-horizontal.svg';
+import logoHorizontal from '../../assets/logo-praga-gris.svg';
 
 
 const Footer = () => {

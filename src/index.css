@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 html {
@@ -6,19 +6,15 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  color: #3e3e3e;
-  background-color: #f9f4ef;
+  font-family: 'Poppins', sans-serif; /* Corresponde a font-body */
+  color: #000000; /* Corresponde a text-praga-gray */
+  background-color: #fbf6f1ff; /* Corresponde a bg-praga-beige */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-}
-
 .btn-primary {
-  background-color: #9e8f7e;
+  background-color: #aa6730;
   color: #fff;
   font-weight: 500;
   padding-left: 1.5rem;
@@ -29,17 +25,23 @@ h1, h2, h3 {
   transition-property: all;
   transition-duration: 300ms;
   transform: none;
+  font-family: 'Poppins', 'sans-serif';
 }
 .btn-primary:hover {
-  background-color: #b5a394;
+  background-color: #d9945b;
   transform: scale(1.05);
   box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
 }
 
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif; /* Corresponde a font-heading */
+  color: #000000; /* Corresponde a text-praga-gold */
+}
+
 .btn-secondary {
   border-width: 2px;
-  border-color: #d4b9a6;
-  color: #3e3e3e;
+  border-color: #d9945b;
+  color: #000000;
   font-weight: 500;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -48,9 +50,10 @@ h1, h2, h3 {
   border-radius: 9999px;
   transition-property: all;
   transition-duration: 300ms;
+  font-family: 'Poppins', 'sans-serif';
 }
 .btn-secondary:hover {
-  background-color: #d4b9a6;
+  background-color: #d9945b;
   color: #fff;
 }
 
@@ -92,7 +95,7 @@ h1, h2, h3 {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #9e8f7e, #d4b9a6);
+  background: linear-gradient(to right, #a8a8a8, #cccccc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import heroImage from '../../assets/hero.jpg';
+import logoGris from '../../assets/logo-praga-gris.svg';
 
 const Hero = () => {
   return (
@@ -32,8 +33,12 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-praga-gray mb-6">
-                <span className="text-gradient">Praga</span>
+              <h1 className="mb-6">
+                <img 
+                  src={logoGris} 
+                  alt="Praga Estética" 
+                  className="h-24 md:h-32 lg:h-36 w-auto mx-auto"
+                />
               </h1>
               <motion.p
                 initial={{ opacity: 0, x: 30 }}
@@ -67,8 +72,12 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="relative z-10 flex flex-col items-center justify-center px-6 py-16 text-center">
-          <h1 className="text-4xl font-display font-bold text-white mb-4 drop-shadow-lg">
-            <span className="text-gradient" style={{ WebkitTextFillColor: 'white', background: 'none' }}>Praga</span>
+          <h1 className="mb-4 drop-shadow-lg">
+            <img 
+              src={logoGris} 
+              alt="Praga Estética" 
+              className="h-20 w-auto mx-auto filter brightness-0 invert drop-shadow-lg"
+            />
           </h1>
           <p className="text-base text-white font-body mb-8 drop-shadow-lg">
             Centro de estética dedicado a realzar tu belleza natural con tratamientos personalizados y tecnología de vanguardia

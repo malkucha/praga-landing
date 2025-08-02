@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Instagram, ChevronDown } from 'lucide-react';
-import logoHorizontal from '../../assets/logo-praga-horizontal.svg';
+import logoHorizontal from '../../assets/logo-praga-gris.svg';
 import { locations } from '../../data/locations';
 
 const Navbar = ({ onNavigateToSucursal, isLanding }) => {
@@ -30,12 +30,12 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
 
   const navItems = [
     // { name: 'Inicio', href: '#hero' },
-    { name: 'Servicios', href: '#services' },
-    { name: 'Promociones', href: '#promotions' },
-    { name: 'Nosotros', href: '#about' },
-    { name: 'Sucursales', href: '#locations', hasDropdown: true },
-    { name: 'Tienda', href: '#shop' },
-    { name: 'Testimonios', href: '#testimonials' },
+    { name: 'SERVICIOS', href: '#services' },
+    { name: 'PROMOCIONES', href: '#promotions' },
+    { name: 'NOSOTROS', href: '#about' },
+    { name: 'SUCURSALES', href: '#locations', hasDropdown: true },
+    { name: 'TIENDA', href: '#shop' },
+    { name: 'TESTIMONIOS', href: '#testimonials' },
   ];
 
   const handleSucursalClick = (locationId) => {
@@ -73,7 +73,7 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
             <img 
               src={logoHorizontal} 
               alt="Praga Estética" 
-              className="h-8 md:h-10 w-auto transition-all duration-300 hover:scale-105"
+              className="h-10 md:h-14 w-auto transition-all duration-300 hover:scale-105"
             />
           </button>
 
@@ -85,7 +85,7 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                   <div className="relative dropdown-container">
                     <button
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      className="flex items-center space-x-1 text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium"
+                      className="flex items-center space-x-1 text-praga-gray hover:text-praga-gold transition-colors duration-300 font-heading font-medium"
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -116,7 +116,7 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                 ) : (
                   <a
                     href={item.href}
-                    className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-medium"
+                    className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-heading font-medium"
                   >
                     {item.name}
                   </a>
