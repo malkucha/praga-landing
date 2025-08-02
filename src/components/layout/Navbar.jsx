@@ -73,7 +73,9 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
             <img 
               src={logoHorizontal} 
               alt="Praga Estética" 
-              className="h-10 md:h-14 w-auto transition-all duration-300 hover:scale-105"
+              className={`h-10 md:h-14 w-auto transition-all duration-300 hover:scale-105 ${
+                isScrolled ? '' : 'filter brightness-0 invert'
+              }`}
             />
           </button>
 
@@ -85,7 +87,9 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                   <div className="relative dropdown-container">
                     <button
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      className="flex items-center space-x-1 text-praga-gray hover:text-praga-gold transition-colors duration-300 font-heading font-medium"
+                      className={`flex items-center space-x-1 hover:text-praga-gold transition-colors duration-300 font-heading font-medium ${
+                        isScrolled ? 'text-praga-gray' : 'text-white'
+                      }`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -116,7 +120,9 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                 ) : (
                   <a
                     href={item.href}
-                    className="text-praga-gray hover:text-praga-gold transition-colors duration-300 font-heading font-medium"
+                    className={`hover:text-praga-gold transition-colors duration-300 font-heading font-medium ${
+                      isScrolled ? 'text-praga-gray' : 'text-white'
+                    }`}
                   >
                     {item.name}
                   </a>
@@ -129,7 +135,9 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
               href="https://instagram.com/pragacba"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-praga-gray hover:text-praga-gold transition-colors duration-300 p-2 rounded-full hover:bg-praga-gold/10"
+              className={`flex items-center space-x-2 hover:text-praga-gold transition-colors duration-300 p-2 rounded-full hover:bg-praga-gold/10 ${
+                isScrolled ? 'text-praga-gray' : 'text-white'
+              }`}
               aria-label="Síguenos en Instagram"
             >
               <span className="text-xs font-medium">Seguinos en</span>
@@ -141,7 +149,11 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
           <div className="hidden sm:block">
             <a
               href="#appointments"
-              className="btn-primary md:px-4 md:py-2 lg:px-6 lg:py-2.5 md:text-sm lg:text-base"
+              className={`md:px-4 md:py-2 lg:px-6 lg:py-2.5 md:text-sm lg:text-base transition-all duration-300 ${
+                isScrolled 
+                ? 'btn-primary' 
+                : 'border-2 border-white text-white hover:bg-white/20 rounded-full font-medium'
+              }`}
             >
               <span className="md:hidden lg:inline">Reservá tu Turno</span>
               <span className="hidden md:inline lg:hidden">Reservá</span>
@@ -153,7 +165,11 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
             {/* Botón CTA mini para móvil */}
             <a
               href="#appointments"
-              className="sm:hidden mr-2 btn-primary px-3 py-1.5 text-xs"
+              className={`sm:hidden mr-2 px-3 py-1.5 text-xs transition-all duration-300 ${
+                isScrolled 
+                ? 'btn-primary' 
+                : 'border-2 border-white text-white hover:bg-white/20 rounded-full font-medium'
+              }`}
             >
               Reservá
             </a>
@@ -163,9 +179,9 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-praga-gray" />
+              <X className={`w-6 h-6 ${isScrolled ? 'text-praga-gray' : 'text-white'}`} />
             ) : (
-              <Menu className="w-6 h-6 text-praga-gray" />
+              <Menu className={`w-6 h-6 ${isScrolled ? 'text-praga-gray' : 'text-white'}`} />
             )}
           </button>
           </div>
