@@ -157,7 +157,7 @@ const Promotions = () => {
                     {/* CTA Button */}
                     <button
                       onClick={() => handleWhatsAppPromo(promo)}
-                      className="w-full bg-green-500 hover:bg-green-600 text-white font-heading font-semibold py-3 px-6 rounded-full transition-all duration-300 flex items-center justify-center space-x-2 group-hover:scale-105"
+                      className="w-full btn-primary flex items-center justify-center space-x-2 group-hover:scale-105"
                     >
                       <span>Consultanos por WhatsApp</span>
                       <ArrowRight className="w-4 h-4" />
