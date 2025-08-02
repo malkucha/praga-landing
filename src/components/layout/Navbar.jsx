@@ -99,7 +99,7 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                           onClick={handleDropdownItemClick}
                           className="block px-4 py-3 text-praga-gray hover:text-praga-gold hover:bg-praga-beige/30 transition-colors duration-300 font-medium border-b border-praga-gray-light/20"
                         >
-                          Ver todas las sucursales
+                          TODAS
                         </a>
                         {locations.map((location) => (
                           <button
