@@ -37,20 +37,21 @@
   }
 
   body {
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
-    background-color: #fbf6f1;
+    @apply font-body text-praga-gray-x-dark bg-praga-gray-light;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3 {
+  h1 {
+    @apply font-agrandir text-praga-gray-x-dark uppercase text-xl;
+  }
+
+  h2, h3 {
     @apply font-agrandir text-praga-gray-x-dark uppercase;
   }
 
   h1::first-letter {
-    @apply font-sloop text-praga-gray-x-dark;
-    font-size: 1.4em;
+    @apply font-sloop text-praga-gray-x-dark text-4xl;
     margin-right: 2px;
   }
 }
