@@ -13,17 +13,24 @@ export default {
           'beige-dark': '#f0e6d6',  // Beige más oscuro
           'gold': '#aa6730',       // Dorado suave
           'gold-light': '#d9945b', // Dorado claro
-          'gray': '#a8a8a8',       // Gris oscuro para texto
-          'gray-light': '#cccccc', // Gris claro
+          'gray': '#CCCCCC',       // Gris oscuro para texto
+          'gray-light': '#F2F2F2', // Gris claro
+          'gray-dark':'#595959',
+          'gray-x-dark':'#474646',
           'white': '#ffffff',      // Blanco puro
           'black': '#000000',      // Negro puro para texto
         }
       },
      fontFamily: {
-        display: ['Great Vibes', 'cursive'],       // Para títulos decorativos como "amistad"
-        heading: ['Poppins', 'sans-serif'],        // Para títulos generales y botones
-        body: ['Inter', 'sans-serif'],             // Para texto general y lectura
-        detail: ['Raleway', 'sans-serif'],         // Para fechas, info fina, promociones
+        // Fuentes personalizadas con nombres descriptivos
+        'agrandir': ['Agrandir Grand', 'sans-serif'],  // font-agrandir
+        'sloop': ['Sloop Script', 'cursive'],          // font-sloop
+        
+        // Fuentes semánticas (las que ya tienes)
+        display: ['Sloop Script', 'cursive'],           // font-display - Para títulos decorativos
+        heading: ['Agrandir Grand', 'sans-serif'],     // font-heading - Para títulos generales
+        body: ['Poppins', 'sans-serif'],              // font-body - Para texto general
+        detail: ['Poppins', 'sans-serif'],            // font-detail - Para detalles
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-out',

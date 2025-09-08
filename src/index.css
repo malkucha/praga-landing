@@ -1,103 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif; /* Corresponde a font-body */
-  color: #000000; /* Corresponde a text-praga-gray */
-  background-color: #fbf6f1ff; /* Corresponde a bg-praga-beige */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Agrandir Grand */
+@font-face {
+  font-family: 'Agrandir Grand';
+  src: url('/fonts/agrandir-grand.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-.btn-primary {
-  background-color: #aa6730;
-  color: #fff;
-  font-weight: 500;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  border-radius: 9999px;
-  transition-property: all;
-  transition-duration: 300ms;
-  transform: none;
-  font-family: 'Poppins', 'sans-serif';
-}
-.btn-primary:hover {
-  background-color: #d9945b;
-  transform: scale(1.05);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+/* Sloop Script Regular */
+@font-face {
+  font-family: 'Sloop Script';
+  src: url('/fonts/sloop-script-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-h1, h2, h3 {
-  font-family: 'Inter', sans-serif; /* Corresponde a font-heading */
-  color: #000000; /* Corresponde a text-praga-gold */
+/* Sloop Script Pro Bold */
+@font-face {
+  font-family: 'Sloop Script';
+  src: url('/fonts/sloop-script-pro-bold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-.btn-secondary {
-  border-width: 2px;
-  border-color: #d9945b;
-  color: #000000;
-  font-weight: 500;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  border-radius: 9999px;
-  transition-property: all;
-  transition-duration: 300ms;
-  font-family: 'Poppins', 'sans-serif';
-}
-.btn-secondary:hover {
-  background-color: #d9945b;
-  color: #fff;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    background-color: #fbf6f1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    @apply font-agrandir text-praga-gray-x-dark uppercase;
+  }
+
+  h1::first-letter {
+    @apply font-sloop text-praga-gray-x-dark;
+    font-size: 1.4em;
+    margin-right: 2px;
+  }
 }
 
-.section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-@media (min-width: 768px) {
+@layer components {
+  .btn-primary {
+    @apply bg-praga-gray-dark text-praga-gray-light font-agrandir font-medium uppercase px-6 py-3 rounded-full transition-all duration-300 hover:bg-praga-gray-x-dark hover:scale-105 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-praga-gray-dark text-praga-gray-dark bg-transparent font-agrandir font-medium uppercase px-6 py-3 rounded-full transition-all duration-300 hover:bg-praga-gray-dark hover:text-white;
+  }
+
   .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    @apply py-16 md:py-24;
   }
-}
 
-.container-custom {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-@media (min-width: 640px) {
   .container-custom {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-}
-@media (min-width: 1024px) {
-  .container-custom {
-    padding-left: 2rem;
-    padding-right: 2rem;
+
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    @apply bg-amber-50/95 border border-white/20 shadow-lg;
   }
-}
 
-.glass-effect {
-  backdrop-filter: blur(12px);
-  background-color: rgba(255,255,255,0.8);
-  border: 1px solid rgba(255,255,255,0.2);
-}
+  .text-gradient {
+    background: linear-gradient(to right, #595959, #cccccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
 
-.text-gradient {
-  background: linear-gradient(to right, #a8a8a8, #cccccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  /* Clases opcionales para tipografía especial */
+  .title-mixed {
+    font-family: 'Agrandir Grand', sans-serif;
+  }
+
+  .title-mixed::first-letter {
+    font-family: 'Sloop Script', cursive;
+    font-size: 1.5em;
+    color: bg-praga-gray;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  .title-script-first::first-letter {
+    font-family: 'Sloop Script', cursive;
+    font-size: 1.8em;
+    color: bg-praga-gray; 
+    font-weight: bold;
+    float: left;
+    line-height: 0.8;
+    margin-right: 4px;
+    margin-top: 8px;
+  }
+
+  .title-elegant::first-letter {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    color: bg-praga-gray;
+    margin-right: 3px;
+  }
 }
