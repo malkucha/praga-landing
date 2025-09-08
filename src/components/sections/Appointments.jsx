@@ -59,7 +59,7 @@ const Appointments = ({ focusedLocation }) => {
   ];
 
   return (
-    <section id="appointments" className="section-padding bg-gradient-to-br from-white to-praga-beige/10">
+    <section id="appointments" className="section-padding bg-praga-gray-light">
       <div className="container-custom">
         {/* Botón flotante de WhatsApp */}
         <div className="fixed bottom-8 right-8 z-50">
@@ -98,16 +98,10 @@ const Appointments = ({ focusedLocation }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center mb-6">
-            <div className="w-16 h-16 bg-praga-gold/10 rounded-full flex items-center justify-center mr-4">
-              <Calendar className="w-10 h-10 text-praga-gold" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-praga-gray">
-              Reservá tu <span className="text-gradient">turno</span>
-            </h2>
-          </div>
-          <div className="w-32 h-1 bg-gradient-to-r from-praga-gold to-praga-rose mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
+          <h1 className="font-bold mb-6">
+            Reservá tu <span className="text-gradient">turno</span>
+          </h1>
+          <p className="text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">
             {focusedLocation 
               ? `Agendá tu cita en ${displayLocations[0]?.name}. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.`
               : 'Agendá tu cita de forma rápida y sencilla. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.'
@@ -115,7 +109,7 @@ const Appointments = ({ focusedLocation }) => {
           </p>
         </motion.div>
 
-        {/* Schedule Information - HORIZONTAL */}
+        {/* Schedule Information */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,11 +117,6 @@ const Appointments = ({ focusedLocation }) => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h3 className="text-3xl font-display font-bold text-praga-gray mb-3 text-center">
-            Información de atención
-          </h3>
-          <div className="w-24 h-1 bg-gradient-to-r from-praga-gold to-praga-rose mx-auto mb-10 rounded-full"></div>
-          
           <div className="grid md:grid-cols-3 gap-8">
             {scheduleInfo.map((info, index) => (
               <motion.div
@@ -136,18 +125,18 @@ const Appointments = ({ focusedLocation }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex flex-col items-center p-8 bg-white rounded-2xl text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border border-praga-gold/10"
+                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 h-full border border-transparent hover:border-praga-gray-dark/20"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-praga-gold/20 to-praga-rose/20 rounded-full flex items-center justify-center mb-5 shadow-md">
-                  <info.icon className="w-10 h-10 text-praga-gold" />
+                <div className="w-16 h-16 bg-gradient-to-br from-praga-gray-dark to-praga-gray rounded-full flex items-center justify-center mb-6">
+                  <info.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-heading font-semibold text-praga-gray mb-3">
+                <h4 className="text-xl font-bold text-praga-gray mb-4 transition-colors duration-300">
                   {info.title}
                 </h4>
-                <p className="text-lg text-praga-gray mb-2 font-medium">
+                <p className="text-praga-gray-dark font-body mb-2 leading-relaxed">
                   {info.detail}
                 </p>
-                <p className="text-praga-gray-light">
+                <p className="text-praga-gray-dark text-sm">
                   {info.subDetail}
                 </p>
               </motion.div>
@@ -155,52 +144,47 @@ const Appointments = ({ focusedLocation }) => {
           </div>
         </motion.div>
 
-        {/* Appointment Booking - CENTERED */}
+        {/* Appointment Booking */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl mx-auto bg-gradient-to-br from-praga-beige/30 to-praga-rose/20 rounded-3xl p-8 md:p-12 shadow-xl"
+          className="text-center mt-8"
         >
-          <div className="text-center mb-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-praga-gold to-praga-rose rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-praga-gray rounded-3xl p-8 shadow-2xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-praga-gray-dark to-praga-gray rounded-full flex items-center justify-center mx-auto mb-6">
               <MessageCircle className="w-10 h-10 text-white" />
             </div>
             
-            <h3 className="text-3xl font-display font-bold text-praga-gray mb-4">
-              ¡Agendá ahora!
-            </h3>
+            <h1 className="h1-light font-bold mb-4">
+              ¡Agendá <span className="text-gradient-white">ahora!</span>
+            </h1>
             
-            <p className="text-praga-gray-light mb-8 leading-relaxed">
+            <p className="text-lg mb-6 text-praga-white">
               {focusedLocation
                 ? `Contactanos por WhatsApp para coordinar tu cita en ${displayLocations[0]?.name}. Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.`
                 : 'Elegí tu sucursal preferida y contactanos por WhatsApp para coordinar tu cita. Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.'
               }
             </p>
             
-          </div>
-
-          {/* Alternative Contact */}
-          <div className="text-center">
-            <p className="text-sm text-praga-gray-light mb-4">
-              ¿Preferís llamar por teléfono?
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {displayLocations.map((location) => (
-                <a
-                  key={location.name}
-                  href={`tel:${location.phone}`}
-                  className="inline-flex items-center space-x-2 text-praga-gold hover:text-praga-gray transition-colors duration-300"
-                >
-                  <Phone className="w-4 h-4" />
-                  <div className="text-left">
-                    <div className="font-heading font-semibold text-sm">{location.name}</div>
-                    <div className="text-xs">{location.phone}</div>
-                  </div>
-                </a>
-              ))}
+            {/* Alternative Contact */}
+            <div className="text-center">
+              <p className="text-sm text-praga-white mb-4">
+                ¿Preferís llamar por teléfono?
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {displayLocations.map((location) => (
+                  <a
+                    key={location.name}
+                    href={`tel:${location.phone}`}
+                    className="btn-secondary inline-block font-semibold hover:scale-105 transition-all duration-300"
+                  >
+                    {location.name.replace('PRAGA | ', '')} - {location.phone}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

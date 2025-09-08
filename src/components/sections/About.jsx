@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-praga-white">
+    <section id="about" className="section-padding bg-praga-gray-light">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -32,17 +32,17 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-praga-gray mb-6">
+            <h1 className="font-bold mb-6">
               Quiénes <span className="text-gradient">somos</span>
-            </h2>
+            </h1>
             
-            <p className="text-lg text-praga-gray-light mb-8 leading-relaxed">
+            <p className="text-lg text-praga-gray-dark mb-8 leading-relaxed">
               En Praga, creemos que la belleza va más allá de la apariencia. Es sobre sentirse 
               segura, radiante y auténtica. Nuestro equipo de profesionales altamente capacitados 
               se dedica a crear experiencias transformadoras que nutren tanto el cuerpo como el alma.
             </p>
 
-            <p className="text-lg text-praga-gray-light mb-12 leading-relaxed">
+            <p className="text-lg text-praga-gray-dark mb-12 leading-relaxed">
               Desde tratamientos faciales personalizados hasta procedimientos estéticos avanzados, 
               cada servicio está cuidadosamente diseñado para ayudarte a alcanzar tus objetivos 
               de belleza de manera segura y efectiva.
@@ -60,13 +60,13 @@ const About = () => {
                   className="flex items-start space-x-4"
                 >
                   <div className="flex-shrink-0 w-12 h-12 bg-praga-rose/20 rounded-full flex items-center justify-center">
-                    <feature.icon className="w-6 h-6 text-praga-gold" />
+                    <feature.icon className="w-6 h-6 text-praga-gray" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-heading font-semibold text-praga-gray mb-2">
+                    <h1 className="text-xl font-heading font-semibold text-praga-gray-dark mb-2">
                       {feature.title}
-                    </h3>
-                    <p className="text-praga-gray-light leading-relaxed">
+                    </h1>
+                    <p className="text-praga-gray-dark leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -95,11 +95,11 @@ const About = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 glass-effect"
+              className="absolute -bottom-6 -left-6 bg-praga-gray-x-dark rounded-xl shadow-xl p-6 glass-effect"
             >
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-praga-gold rounded-full flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 bg-praga-gray-light rounded-full flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-praga-gray" />
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-praga-gray">500+</p>

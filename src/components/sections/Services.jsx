@@ -82,9 +82,7 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 
-          className="font-bold mb-6"
-          >
+          <h1 className="font-bold mb-6">
             Nuestros <span className="text-gradient">Servicios</span>
           </h1>
           <p className="text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">

@@ -80,7 +80,7 @@ const Shop = () => {
   ];
 
   return (
-    <section id="shop" className="section-padding bg-white">
+    <section id="shop" className="section-padding bg-praga-gray-light">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -91,12 +91,12 @@ const Shop = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-6">
-            <ShoppingBag className="w-12 h-12 text-praga-gold mr-3" />
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-praga-gray">
+            <ShoppingBag className="w-12 h-12 text-praga-gray-dark mr-3" />
+            <h1 className="font-bold mb-6">
               Nuestra <span className="text-gradient">Tienda</span>
-            </h2>
+            </h1>
           </div>
-          <p className="text-xl text-praga-gray-light font-body max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-praga-gray-dark font-body max-w-3xl mx-auto leading-relaxed">
             Productos de cosmética profesional seleccionados especialmente para 
             potenciar los resultados de tus tratamientos en casa
           </p>
@@ -222,13 +222,13 @@ const Shop = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-praga-gold/10 to-praga-rose/10 rounded-3xl p-8 md:p-12 text-center"
+          className="bg-gradient-to-r from-praga-gray-dark/10 to-praga-gray-dark/10 rounded-3xl p-8 md:p-12 text-center"
         >
-          <h3 className="text-3xl font-display font-bold text-praga-gray mb-6">
+          <h1 className="font-bold  mb-4 transition-colors duration-300 relative inline-block">
             Explora toda nuestra colección
-          </h3>
+          </h1>
           
-          <p className="text-lg text-praga-gray-light font-body mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-praga-gray-dark font-body mb-8 max-w-2xl mx-auto">
             Descubrí nuestra línea completa de productos de cosmética profesional. 
             Envíos a todo el país y asesoramiento personalizado incluido.
           </p>
@@ -244,15 +244,15 @@ const Shop = () => {
               <ExternalLink className="w-5 h-5" />
             </a>
             
-            <div className="flex items-center space-x-2 text-praga-gray-light">
-              <div className="w-2 h-2 bg-praga-gold rounded-full animate-pulse"></div>
+            <div className="flex items-center space-x-2 text-praga-gray-dark">
+              <div className="w-2 h-2 bg-praga-gray rounded-full animate-pulse"></div>
               <span className="text-sm">Envío gratis en compras superiores a $5.000</span>
             </div>
           </div>
         </motion.div>
 
         {/* Benefits */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -282,7 +282,7 @@ const Shop = () => {
             <h4 className="font-heading font-semibold text-praga-gray">Asesoramiento</h4>
             <p className="text-sm text-praga-gray-light">Consulta personalizada incluida</p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

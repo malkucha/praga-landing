@@ -73,7 +73,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-praga-beige">
+    <section id="testimonials" className="section-padding bg-praga-gray-dark">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -83,9 +83,9 @@ const Testimonials = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-praga-gray mb-6">
+          <h1 className="h1-light font-bold mb-6">
             Lo que dicen nuestras <span className="text-gradient">clientas</span>
-          </h2>
+          </h1>
           <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
             La satisfacción de nuestras clientas es nuestra mayor recompensa. 
             Descubrí sus experiencias y transformaciones.
@@ -94,7 +94,7 @@ const Testimonials = () => {
 
         {isLoadingReviews ? (
           <div className="text-center py-12">
-            <div className="w-16 h-16 border-4 border-praga-gold/30 border-t-praga-gold rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="w-16 h-16 border-4 border-praga-gray/30 border-t-praga-gray rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-praga-gray-light">Cargando reseñas...</p>
           </div>
         ) : (
@@ -112,7 +112,7 @@ const Testimonials = () => {
                 >
                   {/* Quote Icon */}
                   <div className="flex justify-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-praga-gold to-praga-rose rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-praga-gray-dark to-praga-rose rounded-full flex items-center justify-center">
                       <Quote className="w-8 h-8 text-white" />
                     </div>
                   </div>
@@ -139,8 +139,8 @@ const Testimonials = () => {
                   {/* Client Info */}
                   <div className="text-center">
                     {/* Avatar Placeholder */}
-                    <div className="w-20 h-20 bg-gradient-to-br from-praga-rose to-praga-gold rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl text-white font-display">
+                    <div className="w-20 h-20 bg-gradient-to-br from-praga-gray-light to-praga-gray-dark rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <span className="text-2xl text-praga-gray-light font-display">
                         {testimonials[currentTestimonial].name.charAt(0)}
                       </span>
                     </div>
@@ -172,7 +172,7 @@ const Testimonials = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevTestimonial}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-praga-gold hover:text-white transition-all duration-300 group z-10"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-praga-gray hover:text-white transition-all duration-300 group z-10"
                 aria-label="Anterior reseña"
               >
                 <ChevronLeft className="w-6 h-6 text-praga-gray group-hover:text-white" />
@@ -180,7 +180,7 @@ const Testimonials = () => {
 
               <button
                 onClick={nextTestimonial}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-praga-gold hover:text-white transition-all duration-300 group z-10"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-praga-gray hover:text-white transition-all duration-300 group z-10"
                 aria-label="Siguiente reseña"
               >
                 <ChevronRight className="w-6 h-6 text-praga-gray group-hover:text-white" />
@@ -195,8 +195,8 @@ const Testimonials = () => {
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial 
-                      ? 'bg-praga-gold scale-125' 
-                      : 'bg-praga-gray-light hover:bg-praga-rose'
+                      ? 'bg-praga-gray-dark scale-125' 
+                      : 'bg-praga-gray-light hover:bg-praga-gray'
                   }`}
                   aria-label={`Ir a reseña ${index + 1}`}
                 />
@@ -209,7 +209,7 @@ const Testimonials = () => {
                 href="https://www.google.com/maps/place/PRAGA+Centro+de+Est%C3%A9tica/@-31.4219482,-64.187786,17z/data=!4m8!3m7!1s0x9432a34dca8bad43:0x10464912346aba86!8m2!3d-31.4219482!4f-64.187786!9m1!1b1!16s%2Fg%2F11j0ytq1z7?entry=ttu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-praga-gold text-praga-gray-dark hover:bg-praga-gold-light font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border border-praga-gray-dark/20"
+                className="inline-flex items-center bg-praga-gray text-praga-gray-dark hover:bg-praga-gray-light font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border border-praga-gray-dark/20"
               >
                 Ver todas las reseñas en Google Maps
                 <ExternalLink className="w-4 h-4 ml-2" />
@@ -227,28 +227,28 @@ const Testimonials = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center"
         >
           <div>
-            <div className="text-4xl font-display font-bold text-praga-gold mb-2">
+            <div className="text-4xl font-display font-bold text-praga-gray-light mb-2">
               500+
             </div>
             <p className="text-praga-gray-light">Clientas felices</p>
           </div>
           
           <div>
-            <div className="text-4xl font-display font-bold text-praga-gold mb-2">
+            <div className="text-4xl font-display font-bold text-praga-gray-light mb-2">
               98%
             </div>
             <p className="text-praga-gray-light">Satisfacción</p>
           </div>
           
           <div>
-            <div className="text-4xl font-display font-bold text-praga-gold mb-2">
+            <div className="text-4xl font-display font-bold text-praga-gray-light mb-2">
               5★
             </div>
             <p className="text-praga-gray-light">Calificación promedio</p>
           </div>
           
           <div>
-            <div className="text-4xl font-display font-bold text-praga-gold mb-2">
+            <div className="text-4xl font-display font-bold text-praga-gray-light mb-2">
               3+
             </div>
             <p className="text-praga-gray-light">Años de experiencia</p>

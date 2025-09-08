@@ -46,23 +46,32 @@
     @apply font-agrandir text-praga-gray-x-dark uppercase text-xl;
   }
 
-  h2, h3 {
-    @apply font-agrandir text-praga-gray-x-dark uppercase;
+  h1::first-letter {
+    @apply font-sloop text-praga-gray-x-dark text-5xl;
+    margin-right: 2px;
   }
 
-  h1::first-letter {
-    @apply font-sloop text-praga-gray-x-dark text-4xl;
-    margin-right: 2px;
+  h2, h3 {
+    @apply font-agrandir text-praga-gray-x-dark uppercase;
   }
 }
 
 @layer components {
+  .h1-light {
+    @apply font-agrandir text-praga-gray-light uppercase text-xl;
+  }
+
+  .h1-light::first-letter {
+    @apply font-sloop text-praga-gray-light text-5xl;
+    margin-right: 2px;
+  }
+
   .btn-primary {
-    @apply bg-praga-gray-dark text-praga-gray-light font-agrandir font-medium uppercase px-6 py-3 rounded-full transition-all duration-300 hover:bg-praga-gray-x-dark hover:scale-105 hover:shadow-lg;
+    @apply bg-praga-gray-dark text-praga-gray-light font-agrandir font-medium uppercase px-8 py-4 rounded-full transition-all duration-300 hover:bg-praga-gray-x-dark hover:scale-105 hover:shadow-lg inline-block min-w-fit text-center leading-tight;
   }
 
   .btn-secondary {
-    @apply border-2 border-praga-gray-dark text-praga-gray-dark bg-transparent font-agrandir font-medium uppercase px-6 py-3 rounded-full transition-all duration-300 hover:bg-praga-gray-dark hover:text-white;
+    @apply border-2 border-praga-gray-dark text-praga-gray-dark bg-transparent font-agrandir font-medium uppercase px-8 py-4 rounded-full transition-all duration-300 hover:bg-praga-gray-dark hover:text-white inline-block min-w-fit text-center leading-tight;
   }
 
   .section-padding {
@@ -80,6 +89,14 @@
 
   .text-gradient {
     background: linear-gradient(to right, #595959, #cccccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-white {
+    background: linear-gradient(to right, #ffffff, #cccccc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

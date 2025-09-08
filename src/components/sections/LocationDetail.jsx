@@ -54,7 +54,7 @@ const LocationDetail = ({ locationId }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-praga-gray mb-6">
+            <h1 className="font-bold mb-6">
               {location.name}
             </h1>
             
