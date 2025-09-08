@@ -3,7 +3,7 @@
 /* Agrandir Grand */
 @font-face {
   font-family: 'Agrandir Grand';
-  src: url('/fonts/agrandir-grand.ttf') format('truetype');
+  src: url('./assets/fonts/agrandir-grand.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 /* Sloop Script Regular */
 @font-face {
   font-family: 'Sloop Script';
-  src: url('/fonts/sloop-script-regular.ttf') format('truetype');
+  src: url('./assets/fonts/sloop-script-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
 /* Sloop Script Pro Bold */
 @font-face {
   font-family: 'Sloop Script';
-  src: url('/fonts/sloop-script-pro-bold.otf') format('truetype');
+  src: url('./assets/fonts/sloop-script-pro-bold.otf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
