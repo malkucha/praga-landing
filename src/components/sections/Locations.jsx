@@ -39,10 +39,7 @@ const Locations = ({ onNavigateToSucursal }) => {
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-praga-gray mb-2">
                   {location.name}
                 </h3>
-                <div className="flex items-start space-x-2 text-praga-gray-light">
-                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>{location.address}</span>
-                </div>
+                
               </div>
 
               {/* Location Image */}
@@ -56,6 +53,10 @@ const Locations = ({ onNavigateToSucursal }) => {
 
               {/* Contact Info */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="flex items-start space-x-2 text-praga-gray-light">
+                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <span>{location.address}</span>
+                </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4 text-praga-gray-light" />
                   <a 
@@ -64,13 +65,6 @@ const Locations = ({ onNavigateToSucursal }) => {
                   >
                     {location.phone}
                   </a>
-                </div>
-                
-                <div className="flex items-center space-x-2">
-                  <Clock className="w-4 h-4 text-praga-gray-light" />
-                  <span className="text-sm text-praga-gray">
-                    {location.schedule.weekdays}
-                  </span>
                 </div>
               </div>
 
@@ -85,10 +79,6 @@ const Locations = ({ onNavigateToSucursal }) => {
                   <div className="flex justify-between">
                     <span className="text-praga-gray-dark">Sábados</span>
                     <span className="text-praga-gray-dark font-medium">{location.schedule.saturday.split(': ')[1]}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-praga-gray-dark">Domingos</span>
-                    <span className="text-praga-gray-dark font-medium">{location.schedule.sunday.split(': ')[1]}</span>
                   </div>
                 </div>
               </div>

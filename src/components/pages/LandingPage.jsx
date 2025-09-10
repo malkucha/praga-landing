@@ -27,7 +27,7 @@ const LandingPage = ({ onNavigateToSucursal }) => {
         <Services />
         
         {/* Promotions Section - Ofertas especiales para captar interés */}
-        <Promotions />
+        {/* <Promotions /> */}
         
         {/* About Section - Luego generamos confianza */}
         <About />

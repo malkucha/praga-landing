@@ -10,8 +10,8 @@ export const locations = [
     whatsapp: '+5493515488483',
     googleMapsUrl: 'https://www.google.com/maps/place/PRAGA+Centro+de+Est%C3%A9tica/@-31.4219482,-64.1903609,17z/data=!3m1!4b1!4m6!3m5!1s0x9432a34dca8bad43:0x10464912346aba86!8m2!3d-31.4219482!4d-64.187786!16s%2Fg%2F11j0ytq1z7?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D',
     schedule: {
-      weekdays: 'Lun - Vie: 8:00 - 20:00',
-      saturday: 'Sáb: 8:00 - 14:00',
+      weekdays: 'Lun - Vie: 8:00 hs. - 20:00 hs.',
+      saturday: 'Sáb: 8:00 hs. - 14:00 hs.',
       sunday: 'Dom: Cerrado'
     },
     services: ['Todos los servicios', 'Depilación láser', 'Tratamientos faciales', 'Mesoterapia'],
@@ -48,9 +48,8 @@ export const locations = [
     whatsapp: '+5493512185804',
     googleMapsUrl: 'https://www.google.com/maps/place/PRAGA+Zona+Norte/@-31.37222,-64.254948,15z/data=!3m1!4b1!4m6!3m5!1s0x943299376e254d4b:0x363c4e0ebfea34c6!8m2!3d-31.3722213!4d-64.236494!16s%2Fg%2F11xh04t8bg?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D',
     schedule: {
-      weekdays: 'Lun - Vie: 8:00 - 20:00',
-      saturday: 'Sáb: 8:00 - 14:00',
-      sunday: 'Dom: Cerrado'
+      weekdays: 'Lun - Vie: 8:00 hs. - 20:00 hs.',
+      saturday: 'Sáb: 8:00 hs. - 14:00 hs.'
     },
     services: ['Todos los servicios', 'Radiofrecuencia', 'Lifting de pestañas', 'Manicura'],
     image: cerroImage,

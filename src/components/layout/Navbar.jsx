@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Instagram, ChevronDown } from 'lucide-react';
 import logoHorizontal from '../../assets/iso-logo-praga-gris.svg';
+import logoHorizontalBlanco from '../../assets/iso-logo-praga-blanco.svg';
 import { locations } from '../../data/locations';
 
 const Navbar = ({ onNavigateToSucursal, isLanding }) => {
@@ -69,13 +70,11 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
             }}
             aria-label="Ir a la página de inicio"
           >
-            <div className="bg-praga-gray-x-dark rounded-full p-3 transition-all duration-300 group-hover:scale-105 group-hover:bg-praga-gray-dark">
-              <img 
-                src={logoHorizontal} 
-                alt="Praga Estética" 
-                className="h-8 md:h-10 w-auto filter brightness-0 invert"
-              />
-            </div>
+            <img 
+              src={isScrolled ? logoHorizontal : logoHorizontalBlanco} 
+              alt="Praga Estética" 
+              className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105"
+            />
           </button>
 
           {/* Desktop Navigation */}

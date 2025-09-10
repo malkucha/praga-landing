@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { Sparkles, Zap, Star, Sun, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Sparkles, Zap, Star, Sun, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { locations } from '../../data/locations';
 
 const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(2);
+  const [showConsultaMenu, setShowConsultaMenu] = useState(false);
+  const consultaMenuRef = useRef(null);
   
   // Determinar la cantidad de elementos visibles según el tamaño de pantalla
   useEffect(() => {
@@ -19,6 +22,18 @@ const Services = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  // Cerrar menú si se hace click fuera
+  useEffect(() => {
+    if (!showConsultaMenu) return;
+    const handleClickOutside = (e) => {
+      if (consultaMenuRef.current && !consultaMenuRef.current.contains(e.target)) {
+        setShowConsultaMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showConsultaMenu]);
   
   // Funciones para navegar por el carrusel
   const nextSlide = () => {
@@ -40,6 +55,13 @@ const Services = () => {
     const interval = setInterval(nextSlide, 6000);
     return () => clearInterval(interval);
   }, [currentIndex, visibleCount]);
+
+  const handleConsultaClick = (location) => {
+    const message = `Hola! Me gustaría hacer una consulta personalizada sobre sus servicios en ${location.name}. ¿Podrían ayudarme?`;
+    const url = `https://wa.me/${location.whatsapp.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    setShowConsultaMenu(false);
+  };
   const services = [
     {
       icon: Sparkles,
@@ -209,12 +231,41 @@ const Services = () => {
           <p className="text-base md:text-lg text-praga-gray-x-dark mb-8">
             ¿No encontrás el tratamiento que buscás?
           </p>
-          <a
-            href="#contact"
-            className="btn-primary"
-          >
-            Consulta personalizada
-          </a>
+          
+          {/* Consulta personalizada con menú desplegable */}
+          <div className="relative inline-block">
+            <button
+              onClick={() => setShowConsultaMenu(!showConsultaMenu)}
+              className="btn-primary"
+            >
+              Consulta personalizada
+            </button>
+            
+            {/* Menú de selección de sucursal */}
+            {showConsultaMenu && (
+              <div
+                ref={consultaMenuRef}
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-2xl shadow-2xl border border-praga-gray-light/20 p-4 min-w-[220px] flex flex-col gap-2 z-50"
+                style={{ 
+                  opacity: 1,
+                  transform: 'translateX(-50%)',
+                  transition: 'opacity 0.2s ease-out'
+                }}
+              >
+                <div className="text-praga-gray-dark font-agrandir font-semibold mb-2 text-center uppercase text-xs">Elegí sucursal</div>
+                {locations.map((location) => (
+                  <button
+                    key={location.id}
+                    onClick={() => handleConsultaClick(location)}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-praga-beige/40 text-praga-gray-dark md:text-praga-gray md:hover:text-praga-gray-dark transition-colors font-medium text-sm"
+                  >
+                    <MessageCircle className="w-5 h-5 text-green-500" />
+                    <span>{location.name.replace('PRAGA | ', '')}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </motion.div>
       </div>
     </section>

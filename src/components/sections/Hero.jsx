@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import logoGris from '../../assets/logo-praga-gris.svg';
+import logoGris from '../../assets/logo-praga-blanco.svg';
 
 const Hero = () => {
   return (
@@ -7,21 +7,17 @@ const Hero = () => {
       id="hero" 
       className="relative min-h-screen flex items-end justify-center overflow-hidden bg-white"
     >
-      {/* Background Video */}
-      <div className="absolute inset-0">
-        <video 
-          src="/PragaHero.mov"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover object-center scale-75 sm:scale-50 md:scale-75 lg:scale-100"
+      {/* Background Video from YouTube */}
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          src="https://www.youtube.com/embed/fUSlOH0FK0o?autoplay=1&mute=1&loop=1&playlist=fUSlOH0FK0o&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=0"
+          title="Praga Centro de Estética"
+          className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          allow="autoplay; encrypted-media"
+          style={{ border: 'none' }}
+          allowFullScreen
         />
         <div className="absolute inset-0 bg-black/30"></div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-white/20 rounded-full animate-float hidden md:block"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-white/30 rounded-full animate-float hidden md:block" style={{ animationDelay: '1s' }}></div>
       </div>
       
       {/* Content */}
@@ -34,7 +30,7 @@ const Hero = () => {
           >
             <h1 className="mb-8"  >
               <motion.div 
-                initial={{ scale: 0.8, opacity: 0 , display:'none'}}
+                initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ 
                   type: "spring",

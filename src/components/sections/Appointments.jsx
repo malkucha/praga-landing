@@ -39,12 +39,6 @@ const Appointments = ({ focusedLocation }) => {
 
   const scheduleInfo = [
     {
-      icon: Calendar,
-      title: 'Días de atención',
-      detail: 'Lunes a Sábado',
-      subDetail: 'Domingos cerrado'
-    },
-    {
       icon: Clock,
       title: 'Horarios',
       detail: locations[0].schedule.weekdays,
@@ -76,12 +70,12 @@ const Appointments = ({ focusedLocation }) => {
               ref={waMenuRef}
               className="absolute bottom-20 right-0 bg-white rounded-2xl shadow-2xl border border-praga-gray-light/20 p-4 min-w-[220px] flex flex-col gap-2 animate-fade-in"
             >
-              <div className="text-praga-gray font-semibold mb-2 text-center">Elegí sucursal</div>
+              <div className="text-praga-gray-dark font-agrandir font-semibold mb-2 text-center uppercase text-xs">Elegí sucursal</div>
               {locations.map((location) => (
                 <button
                   key={location.id}
                   onClick={() => handleWhatsAppClick(location)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-praga-beige/40 text-praga-gray hover:text-praga-gold transition-colors font-medium"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-praga-beige/40 text-praga-gray-dark md:text-praga-gray md:hover:text-praga-gray-dark transition-colors font-medium text-sm"
                 >
                   <MessageCircle className="w-5 h-5 text-green-500" />
                   <span>{location.name.replace('PRAGA | ', '')}</span>
@@ -98,9 +92,6 @@ const Appointments = ({ focusedLocation }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="font-bold mb-6">
-            Reservá tu turno
-          </h1>
           <p className="text-lg md:text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">
             {focusedLocation 
               ? `Agendá tu cita en ${displayLocations[0]?.name}. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.`
@@ -117,7 +108,7 @@ const Appointments = ({ focusedLocation }) => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="hidden">
             {scheduleInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -157,8 +148,8 @@ const Appointments = ({ focusedLocation }) => {
               <MessageCircle className="w-10 h-10 text-white" />
             </div>
             
-            <h1 className="h1-light font-bold mb-4">
-              ¡Agendá ahora!
+            <h1 className="font-bold mb-6">
+            Reservá tu turno
             </h1>
             
             <p className="text-base md:text-lg mb-6 text-praga-white">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Instagram, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { locations } from '../../data/locations';
-import logoHorizontal from '../../assets/logo-praga-gris.svg';
+import logoHorizontal from '../../assets/iso-logo-praga-blanco.svg';
 
 
 const Footer = () => {
@@ -10,12 +10,11 @@ const Footer = () => {
   // Usar horarios de la primera ubicación (ya que ambas tienen los mismos horarios)
   const schedule = [
     { day: 'Lunes a Viernes', hours: locations[0].schedule.weekdays.split(': ')[1] },
-    { day: 'Sábados', hours: locations[0].schedule.saturday.split(': ')[1] },
-    { day: 'Domingos', hours: locations[0].schedule.sunday.split(': ')[1] }
+    { day: 'Sábados', hours: locations[0].schedule.saturday.split(': ')[1] }
   ];
 
   return (
-    <footer className="bg-praga-gray text-praga-white">
+    <footer className="bg-praga-gray-x-dark text-praga-white">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
@@ -41,9 +40,9 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center group"
                 >
-                <span className="text-xs text-praga-white/80 mr-0 group-hover:text-praga-gold transition-colors">Seguinos en</span>
-                <div className="w-10 h-10 -ml-0.5 bg-praga-gold/20 rounded-full flex items-center justify-center group-hover:bg-praga-gold group-hover:scale-110 transition-all duration-300">
-                  <Instagram className="w-4 h-4" />
+                <span className="text-sm text-praga-white/80 mr-0 group-hover:text-praga-white transition-colors">Seguinos en</span>
+                <div className="w-10 h-10 -ml-0.5 bg-praga-gray-dark/20 rounded-full flex items-center justify-center group-hover:bg-praga-gray group-hover:scale-110 transition-all duration-300">
+                  <Instagram className="w-5 h-5" />
                 </div>
               </a>
             </div>
@@ -65,14 +64,14 @@ const Footer = () => {
                   </h5>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-start space-x-2">
-                      <MapPin className="w-4 h-4 text-praga-gold mt-0.5 flex-shrink-0" />
+                      <MapPin className="w-4 h-4 text-praga-gray mt-0.5 flex-shrink-0" />
                       <span className="text-praga-white/80">{location.address}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Phone className="w-4 h-4 text-praga-gold" />
+                      <Phone className="w-4 h-4 text-praga-gray" />
                       <a 
                         href={`tel:${location.phone}`}
-                        className="text-praga-white/80 hover:text-praga-gold transition-colors"
+                        className="text-praga-white/80 hover:text-praga-white transition-colors"
                       >
                         {location.phone}
                       </a>
@@ -91,20 +90,15 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-64"
           >
-            <div className="flex justify-center gap-6">
-              <div className="text-praga-white/80 text-center">
-                <div className="font-medium">{schedule[0].day}</div>
-                <div className="text-sm text-praga-gold">{schedule[0].hours}</div>
-              </div>
-              <div className="text-praga-white/80 text-center">
+
+            <div className="text-praga-white/80 text-center">
+              <div className="font-medium">{schedule[0].day}</div>
+              <div className="text-sm text-praga-gray">{schedule[0].hours}</div>
+            </div>
+            <div className="text-praga-white/80 text-center">
                 <div className="font-medium">{schedule[1].day}</div>
-                <div className="text-sm text-praga-gold">{schedule[1].hours}</div>
+                <div className="text-sm text-praga-gray">{schedule[1].hours}</div>
               </div>
-            </div>
-            <div className="text-praga-white/80 text-center mt-3">
-              <div className="font-medium">Domingos</div>
-              <div className="text-sm text-praga-gold">Cerrado</div>
-            </div>
           </motion.div>
         </div>
       </div>
@@ -114,13 +108,13 @@ const Footer = () => {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-praga-white/60">
             <div>
-              © {currentYear} Praga Centro de Estética. Todos los derechos reservados.
+              © 2021 PRAGA ESTHETIC & WELLNESS. Todos los derechos reservados.
             </div>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <a href="#" className="hover:text-praga-gold transition-colors duration-300">
+              <a href="#" className="hover:text-praga-white transition-colors duration-300">
                 Política de Privacidad
               </a>
-              <a href="#" className="hover:text-praga-gold transition-colors duration-300">
+              <a href="#" className="hover:text-praga-white transition-colors duration-300">
                 Términos y Condiciones
               </a>
             </div>
