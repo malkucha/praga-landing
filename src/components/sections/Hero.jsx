@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import heroImage from '../../assets/hero.jpg';
 import logoGris from '../../assets/logo-praga-gris.svg';
 
 const Hero = () => {
@@ -8,14 +7,17 @@ const Hero = () => {
       id="hero" 
       className="relative min-h-screen flex items-end justify-center overflow-hidden bg-white"
     >
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage}
-          alt="Centro de estética Praga - Ambiente elegante y relajante"
-          className="w-full h-full object-cover object-center md:object-[center_30%] sm:object-cover sm:object-[center_100%]"
+        <video 
+          src="/PragaHero.mov"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-center scale-75 sm:scale-50 md:scale-75 lg:scale-100"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
         
         {/* Decorative elements */}
         <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-white/20 rounded-full animate-float hidden md:block"></div>
