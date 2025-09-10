@@ -9,39 +9,39 @@ const Testimonials = () => {
   // Reseñas reales de Google Maps (selección de las más recientes con mejor puntuación)
   const testimonials = [
     {
-      name: 'Melisa Robino',
-      date: '1 mes atrás',
+      name: 'Elba Juarez',
+      date: '3 mes atrás',
       service: 'Tratamiento facial',
       rating: 5,
-      text: 'El lugar es hermoso, muy cálido, atendido por sus dueñas. Las instalaciones son impecables y los tratamientos excelentes. Súper recomendable!'
+      text: 'Precioso lugar. Muy buena atención. Recomendable ampliamente. Sin duda volveré por otros servicios'
     },
     {
-      name: 'Carolina Pereyra',
-      date: '2 meses atrás',
-      service: 'Limpieza profunda',
+      name: 'Mariela Sosa',
+      date: '7 meses atrás',
+      service: 'Masajes',
       rating: 5,
-      text: 'Un espacio de tranquilidad y relax. Excelente atención y cuidado al cliente. Me encantaron los resultados del tratamiento facial.'
+      text: 'Excelente atención predispuestas las secretarias para ubicarte los turnos. Siempre en horario me atendieron eso es muy importante. Quiero destacar la amabilidad y profesionalismo de Rosina una genia sus masajes son increíbles súper recomendable'
     },
     {
-      name: 'Florencia Sánchez',
-      date: '2 meses atrás',
+      name: 'Candela Gugger',
+      date: '7 meses atrás',
       service: 'Tratamiento corporal',
       rating: 5,
-      text: 'Hace tiempo que vengo a Praga y siempre salgo muy satisfecha. Las chicas son super profesionales y te asesoran con el tratamiento que más se adecua a lo que necesitás.'
+      text: 'El lugar es perfecto!!! Desde la limpieza, atención, comodidad, todo todo. Super completo el servicio. 100% recomendable'
     },
     {
-      name: 'Luciana Martinelli',
-      date: '3 meses atrás',
+      name: 'Maria Florencia Arans',
+      date: '1 año atrás',
       service: 'Masaje relajante',
       rating: 5,
-      text: 'Experiencia increíble! Desde que entré me hicieron sentir cómoda. El ambiente es hermoso y relajante. Los resultados superaron mis expectativas.'
+      text: 'Excelente atención, las chicas super amables! El lugar muy limpio e impecable todo. La profesional que me atendió super atenta en todo momento. Muy buena experiencia!'
     },
     {
-      name: 'María José Gonzalez',
-      date: '3 meses atrás',
+      name: 'Denis Laciar',
+      date: '3 años atrás',
       service: 'Depilación definitiva',
       rating: 5,
-      text: 'Primera vez que voy y me encantó! Las profesionales muy atentas y los tratamientos muy efectivos. El lugar es precioso y con muy buena energía.'
+      text: 'Excelente atención y profesionalismo. Muy amables las chicas!'
     }
   ];
 
@@ -118,7 +118,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-xl md:text-2xl text-praga-gray text-center font-body leading-relaxed mb-8">
+                  <blockquote className="text-xl md:text-2xl text-praga-gray-dark text-center font-body leading-relaxed mb-8">
                     "{testimonials[currentTestimonial].text}"
                   </blockquote>
 
@@ -139,7 +139,7 @@ const Testimonials = () => {
                   {/* Client Info */}
                   <div className="text-center">
                     {/* Avatar Placeholder */}
-                    <div className="w-20 h-20 bg-gradient-to-br from-praga-gray-light to-praga-gray-dark rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-20 h-20 bg-praga-gray-dark rounded-full mx-auto mb-4 flex items-center justify-center">
                       <span className="text-2xl text-praga-gray-light font-display">
                         {testimonials[currentTestimonial].name.charAt(0)}
                       </span>
@@ -149,11 +149,11 @@ const Testimonials = () => {
                       {testimonials[currentTestimonial].name}
                     </h3>
                     
-                    <p className="text-praga-gray-light mb-1">
+                    <p className="text-praga-gray mb-1">
                       {testimonials[currentTestimonial].service}
                     </p>
                     
-                    <p className="text-sm text-praga-gray-light/70">
+                    <p className="text-sm text-praga-gray">
                       {testimonials[currentTestimonial].date}
                     </p>
                   </div>
@@ -224,7 +224,8 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center"
+          className="hidden"
+          // className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center"
         >
           <div>
             <div className="text-4xl font-display font-bold text-praga-gray-light mb-2">
