@@ -103,7 +103,8 @@ const Shop = () => {
         </motion.div>
 
         {/* Products Carousel */}
-        <div className="relative mb-6">
+        {/* <div className="relative mb-6"> */}
+        <div className="hidden">
           {/* Carousel Container */}
           <div className="overflow-hidden pb-4">
             <div 

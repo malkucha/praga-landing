@@ -1,40 +1,210 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, MapPin, Phone, Clock, Calendar, MessageCircle, Navigation } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 // Layout Components
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 
 // Section Components
-import LocationDetail from '../sections/LocationDetail';
 import Appointments from '../sections/Appointments';
 
+// Data
+import { locations } from '../../data/locations';
+import { getPromotionsByLocation } from '../../data/promotions';
+
+// Individual section components for this page
+import SucursalSpecialties from '../sections/SucursalSpecialties';
+import SucursalTeam from '../sections/SucursalTeam';
+import SucursalSchedule from '../sections/SucursalSchedule';
+import SucursalPromotions from '../sections/SucursalPromotions';
+import SucursalAmenities from '../sections/SucursalAmenities';
+
 const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal }) => {
+  const [location, setLocation] = useState(null);
+  const [locationPromotions, setLocationPromotions] = useState([]);
+
+  useEffect(() => {
+    const foundLocation = locations.find(loc => loc.id === locationId);
+    const promotions = getPromotionsByLocation(locationId);
+    
+    setLocation(foundLocation);
+    setLocationPromotions(promotions);
+  }, [locationId]);
+
+  if (!location) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-praga-gray mb-4">Ubicación no encontrada</h2>
+          <button
+            onClick={onNavigateBack}
+            className="btn-primary"
+          >
+            Volver al inicio
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const handleWhatsAppClick = () => {
+    const message = `Hola! Me gustaría obtener información sobre los servicios en ${location.name}`;
+    const url = `https://wa.me/${location.whatsapp.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
+  const handleWhatsAppPromo = (promo) => {
+    const message = `Hola! Me interesa la promoción "${promo.title}" en ${location.name}. ¿Podrían darme más información?`;
+    const url = `https://wa.me/${location.whatsapp.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <div className="sucursal-page">
       {/* Fixed Navigation */}
       <Navbar onNavigateToSucursal={onNavigateToSucursal} isLanding={false} />
       
-      {/* Back to Landing Button */}
-      <div className="bg-white border-b border-praga-gray-light/20 sticky top-[80px] z-40">
-        <div className="container-custom py-4">
-          <motion.button
-            onClick={onNavigateBack}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center space-x-2 text-praga-gray hover:text-praga-gold transition-colors duration-300 group"
-          >
-            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
-            <span className="font-medium">Volver al inicio</span>
-          </motion.button>
+      {/* Hero Section with Location Image */}
+      <section className="relative min-h-screen flex items-end justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={location.image} 
+            alt={`Sucursal ${location.name}`}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
-      </div>
+        
+        {/* Back Button - Fixed */}
+        <motion.button
+          onClick={onNavigateBack}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed top-24 left-8 z-50 flex items-center space-x-2 text-white hover:text-praga-gold transition-colors duration-300 group bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full"
+        >
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+          <span className="font-medium">Volver</span>
+        </motion.button>
+        
+        {/* Hero Content */}
+        <div className="relative z-10 container-custom pb-16 md:pb-20">
+          <div className="max-w-4xl mx-auto text-center px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <h1 className="h1-light font-bold mb-8">
+                {location.name}
+              </h1>
+              
+              <p className="text-xl text-praga-gray-light mb-12 leading-relaxed max-w-2xl mx-auto">
+                {location.description}
+              </p>
+
+              {/* Contact Info Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                {/* Contact Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="glass-effect rounded-2xl p-6"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 text-left">
+                      <MapPin className="w-5 h-5 text-praga-gold flex-shrink-0" />
+                      <span className="text-praga-gray-dark">{location.address}</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 text-left">
+                      <Phone className="w-5 h-5 text-praga-gold flex-shrink-0" />
+                      <a 
+                        href={`tel:${location.phone}`}
+                        className="text-praga-gray-dark hover:text-praga-gold transition-colors"
+                      >
+                        {location.phone}
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Schedule Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="glass-effect rounded-2xl p-6"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 text-left">
+                      <Clock className="w-5 h-5 text-praga-gold flex-shrink-0" />
+                      <span className="text-praga-gray-dark">{location.schedule.weekdays}</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 text-left">
+                      <Calendar className="w-5 h-5 text-praga-gold flex-shrink-0" />
+                      <span className="text-praga-gray-dark">{location.schedule.saturday}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+              >
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="btn-primary flex items-center justify-center space-x-2 px-8 py-4"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Contactanos por WhatsApp</span>
+                </button>
+                
+                <a
+                  href={location.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary flex items-center justify-center space-x-2 px-8 py-4 text-white border-white hover:bg-white hover:text-praga-gray"
+                >
+                  <Navigation className="w-5 h-5" />
+                  <span>Ver en Google Maps</span>
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
       
       {/* Main Content */}
       <main>
-        {/* Location Detail Section */}
-        <LocationDetail key={locationId} locationId={locationId} />
+        {/* Specialties Section */}
+        {/* <SucursalSpecialties specialties={location.specialties} /> */}
+        
+        {/* Service Schedule Section */}
+        {/* <SucursalSchedule serviceSchedule={location.serviceSchedule} /> */}
+        
+        {/* Team Section */}
+        {/* <SucursalTeam team={location.team} /> */}
+        
+        {/* Promotions Section */}
+        {/* {locationPromotions.length > 0 && (
+          <SucursalPromotions 
+            promotions={locationPromotions} 
+            onWhatsAppPromo={handleWhatsAppPromo}
+            locationName={location.name}
+          />
+        )} */}
+        
+        {/* Amenities Section */}
+        {/* <SucursalAmenities amenities={location.amenities} /> */}
         
         {/* Appointments Section - Focused on this location */}
         <Appointments key={`appointments-${locationId}`} focusedLocation={locationId} />
