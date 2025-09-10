@@ -15,9 +15,9 @@ const Locations = ({ onNavigateToSucursal }) => {
           className="text-center mb-16"
         >
           <h1 className="font-bold mb-6">
-            Nuestras <span className="text-gradient">Sucursales</span>
+            Nuestras Sucursales
           </h1>
-          <p className="text-xl text-praga-gray-dark max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-praga-gray-dark max-w-3xl mx-auto leading-relaxed">
             Te esperamos en cualquiera de nuestras dos sucursales en Córdoba. 
             Misma calidad, mismo cuidado, cerca tuyo.
           </p>
@@ -36,7 +36,7 @@ const Locations = ({ onNavigateToSucursal }) => {
             >
               {/* Location Header */}
               <div className="mb-6">
-                <h3 className="text-2xl font-heading font-bold text-praga-gray mb-2">
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-praga-gray mb-2">
                   {location.name}
                 </h3>
                 <div className="flex items-start space-x-2 text-praga-gray-light">

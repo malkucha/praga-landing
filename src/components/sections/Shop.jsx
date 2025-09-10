@@ -93,7 +93,7 @@ const Shop = () => {
           <div className="flex items-center justify-center mb-6">
             <ShoppingBag className="w-12 h-12 text-praga-gray-dark mr-3" />
             <h1 className="font-bold mb-6">
-              Nuestra <span className="text-gradient">Tienda</span>
+              Nuestra Tienda
             </h1>
           </div>
           <p className="text-xl text-praga-gray-dark font-body max-w-3xl mx-auto leading-relaxed">

@@ -43,35 +43,35 @@
   }
 
   h1 {
-    @apply font-agrandir text-praga-gray-x-dark uppercase text-xl;
+    @apply font-agrandir text-praga-gray-x-dark uppercase text-xl md:text-3xl;
   }
 
   h1::first-letter {
-    @apply font-sloop text-praga-gray-x-dark text-5xl;
+    @apply font-sloop text-praga-gray-x-dark text-4xl md:text-6xl;
     margin-right: 2px;
   }
 
   h2, h3 {
-    @apply font-agrandir text-praga-gray-x-dark uppercase;
+    @apply font-agrandir text-praga-gray-x-dark uppercase text-base md:text-lg;
   }
 }
 
 @layer components {
   .h1-light {
-    @apply font-agrandir text-praga-gray-light uppercase text-xl;
+    @apply font-agrandir text-praga-gray-light uppercase text-xl md:text-3xl;
   }
 
   .h1-light::first-letter {
-    @apply font-sloop text-praga-gray-light text-5xl;
+    @apply font-sloop text-praga-gray-light text-4xl md:text-6xl;
     margin-right: 2px;
   }
 
   .btn-primary {
-    @apply bg-praga-gray-dark text-praga-gray-light font-agrandir font-medium uppercase px-8 py-4 rounded-full transition-all duration-300 hover:bg-praga-gray-x-dark hover:scale-105 hover:shadow-lg inline-block min-w-fit text-center leading-tight;
+    @apply bg-praga-gray-dark text-praga-gray-light font-agrandir font-medium uppercase px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full transition-all duration-300 hover:bg-praga-gray-x-dark hover:scale-105 hover:shadow-lg inline-block min-w-fit text-center leading-tight;
   }
 
   .btn-secondary {
-    @apply border-2 border-praga-gray-dark text-praga-gray-dark bg-transparent font-agrandir font-medium uppercase px-8 py-4 rounded-full transition-all duration-300 hover:bg-praga-gray-dark hover:text-white inline-block min-w-fit text-center leading-tight;
+    @apply border-2 border-praga-gray-dark text-praga-gray-dark bg-transparent font-agrandir font-medium uppercase px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-full transition-all duration-300 hover:bg-praga-gray-dark hover:text-white inline-block min-w-fit text-center leading-tight;
   }
 
   .section-padding {
@@ -96,7 +96,7 @@
   }
 
   .text-gradient-white {
-    background: linear-gradient(to right, #ffffff, #cccccc);
+    background: linear-gradient(to right, #cccccc, #595959);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

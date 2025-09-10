@@ -6,14 +6,14 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-end justify-center overflow-hidden"
+      className="relative min-h-screen flex items-end justify-center overflow-hidden bg-white"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
           src={heroImage}
           alt="Centro de estética Praga - Ambiente elegante y relajante"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center md:object-[center_30%] sm:object-cover sm:object-[center_100%]"
         />
         <div className="absolute inset-0 bg-black/40"></div>
         
@@ -46,7 +46,7 @@ const Hero = () => {
                 <img
                   src={logoGris} 
                   alt="Praga Estética" 
-                  className="h-20 sm:h-28 md:h-36 w-auto mx-auto filter brightness-0 invert drop-shadow-xl relative z-10 hover:scale-105 transition-transform duration-500"
+                  className="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mx-auto filter brightness-0 invert drop-shadow-xl relative z-10 hover:scale-105 transition-transform duration-500"
                 />
               </motion.div>
             </h1>
@@ -56,11 +56,11 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg md:text-xl text-white font-body mb-10 leading-relaxed drop-shadow-lg max-w-xl mx-auto"
             >
-              En nuestro centro de estética nos apasiona realzar tu belleza natural. Te acompañamos con tratamientos personalizados, pensados para vos, combinando el cuidado cercano con la mejor tecnología.
+              Nos apasiona realzar tu belleza natural. Te acompañamos con tratamientos personalizados, pensados para vos, combinando el cuidado cercano con la mejor tecnología.
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-              <a href="#services" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">Nuestros servicios</a>
-              <a href="#appointments" className="btn-secondary text-lg px-8 py-4 w-full sm:w-auto text-center bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/30">Reservá tu turno</a>
+              <a href="#services" className="btn-primary w-full sm:w-auto text-center">Nuestros servicios</a>
+              <a href="#appointments" className="btn-secondary w-full sm:w-auto text-center bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/30">Reservá tu turno</a>
             </div>
             <div className="mt-4 text-center">
               <a href="#locations" className="inline-flex items-center text-white hover:text-yellow-300 transition-colors duration-300 group">

@@ -83,9 +83,9 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h1 className="font-bold mb-6">
-            Nuestros <span className="text-gradient">Servicios</span>
+            Nuestros Servicios
           </h1>
-          <p className="text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">
             Descubrí nuestra amplia gama de tratamientos diseñados para realzar tu belleza 
             natural y brindarte la confianza que merecés
           </p>
@@ -126,12 +126,12 @@ const Services = () => {
                     </div>
 
                     {/* Service Content */}
-                    <h1 className="font-bold text-praga-gray mb-4 transition-colors duration-300 relative inline-block">
+                    <h3 className="font-bold mb-4 transition-colors duration-300 relative inline-block">
                       {service.title}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-praga-gray-dark group-hover:w-full transition-all duration-300"></span>
-                    </h1>
+                    </h3>
                     
-                    <p className="text-praga-gray-dark font-body mb-6 leading-relaxed">
+                    <p className="text-sm md:text-base text-praga-gray-dark font-body mb-6 leading-relaxed">
                       {service.description}
                     </p>
 
@@ -206,12 +206,12 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mt-8"
         >
-          <p className="text-lg text-praga-gray-x-dark mb-8">
+          <p className="text-base md:text-lg text-praga-gray-x-dark mb-8">
             ¿No encontrás el tratamiento que buscás?
           </p>
           <a
             href="#contact"
-            className="btn-primary text-lg px-8 py-4"
+            className="btn-primary"
           >
             Consulta personalizada
           </a>

@@ -99,9 +99,9 @@ const Appointments = ({ focusedLocation }) => {
           className="text-center mb-16"
         >
           <h1 className="font-bold mb-6">
-            Reservá tu <span className="text-gradient">turno</span>
+            Reservá tu turno
           </h1>
-          <p className="text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-praga-gray-x-dark max-w-3xl mx-auto leading-relaxed">
             {focusedLocation 
               ? `Agendá tu cita en ${displayLocations[0]?.name}. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.`
               : 'Agendá tu cita de forma rápida y sencilla. Nuestro equipo está listo para brindarte la mejor experiencia en estética y belleza.'
@@ -130,13 +130,13 @@ const Appointments = ({ focusedLocation }) => {
                 <div className="w-16 h-16 bg-gradient-to-br from-praga-gray-dark to-praga-gray rounded-full flex items-center justify-center mb-6">
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-praga-gray mb-4 transition-colors duration-300">
+                <h4 className="text-lg md:text-xl font-bold text-praga-gray mb-4 transition-colors duration-300">
                   {info.title}
                 </h4>
-                <p className="text-praga-gray-dark font-body mb-2 leading-relaxed">
+                <p className="text-sm md:text-base text-praga-gray-dark font-body mb-2 leading-relaxed">
                   {info.detail}
                 </p>
-                <p className="text-praga-gray-dark text-sm">
+                <p className="text-praga-gray-dark text-xs md:text-sm">
                   {info.subDetail}
                 </p>
               </motion.div>
@@ -158,10 +158,10 @@ const Appointments = ({ focusedLocation }) => {
             </div>
             
             <h1 className="h1-light font-bold mb-4">
-              ¡Agendá <span className="text-gradient-white">ahora!</span>
+              ¡Agendá ahora!
             </h1>
             
-            <p className="text-lg mb-6 text-praga-white">
+            <p className="text-base md:text-lg mb-6 text-praga-white">
               {focusedLocation
                 ? `Contactanos por WhatsApp para coordinar tu cita en ${displayLocations[0]?.name}. Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.`
                 : 'Elegí tu sucursal preferida y contactanos por WhatsApp para coordinar tu cita. Te responderemos inmediatamente y te ayudaremos a elegir el mejor horario para ti.'

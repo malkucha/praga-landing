@@ -33,7 +33,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-bold mb-6">
-              Quiénes <span className="text-gradient">somos</span>
+              Quiénes somos
             </h1>
             
             <p className="text-lg text-praga-gray-dark mb-8 leading-relaxed">

@@ -84,7 +84,7 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h1 className="h1-light font-bold mb-6">
-            Lo que dicen nuestras <span className="text-gradient">clientas</span>
+            Lo que dicen nuestras clientas
           </h1>
           <p className="text-xl text-praga-gray-light max-w-3xl mx-auto leading-relaxed">
             La satisfacción de nuestras clientas es nuestra mayor recompensa. 
