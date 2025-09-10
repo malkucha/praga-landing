@@ -62,36 +62,116 @@ const Services = () => {
     window.open(url, '_blank');
     setShowConsultaMenu(false);
   };
-  const services = [
-    {
-      icon: Sparkles,
-      title: 'Tratamientos Faciales',
-      description: 'Limpieza profunda, hidratación y rejuvenecimiento para todo tipo de piel',
-      features: ['Limpieza profunda', 'Hidratación intensiva', 'Anti-aging', 'Piel sensible'],
-      image: 'facial'
-    },
-    {
-      icon: Zap,
-      title: 'Depilación Láser',
-      description: 'Eliminación permanente del vello no deseado con tecnología de última generación',
-      features: ['Láser Diodo', 'Indoloro', 'Resultados permanentes', 'Todo tipo de piel'],
-      image: 'laser'
-    },
-    {
-      icon: Star,
-      title: 'Mesoterapia',
-      description: 'Revitalización y nutrición profunda de la piel con microinyecciones',
-      features: ['Vitaminas', 'Ácido hialurónico', 'Antioxidantes', 'Hidratación'],
-      image: 'meso'
-    },
-    {
-      icon: Sun,
-      title: 'Radiofrecuencia',
-      description: 'Tensado y reafirmación de la piel sin cirugía',
-      features: ['Reafirmación', 'Reducción arrugas', 'Estimula colágeno', 'Sin dolor'],
-      image: 'radio'
-    }
-  ];
+const services = [
+  {
+    icon: Sparkles,
+    title: 'Estética Facial',
+    description: 'Tratamientos diseñados para mejorar la salud y apariencia de la piel, devolviéndole luminosidad, firmeza y frescura.',
+    features: [
+      'Limpieza facial profunda',
+      'Peeling',
+      'Dermapen',
+      'Dermaplaning',
+      'Exosomas',
+      'Mesoterapia facial',
+      'Radiofrecuencia fraccionada',
+      'Ácido hialurónico',
+      'Bioestimuladores de colágeno',
+      'Toxina botulínica (botox)'
+    ],
+    image: 'facial'
+  },
+  {
+    icon: Zap,
+    title: 'Micropigmentación',
+    description: 'Técnicas semipermanentes que realzan rasgos faciales como labios y cejas, brindando definición, color y naturalidad.',
+    features: [
+      'Micropigmentación de labios',
+      'Micropigmentación de cejas'
+    ],
+    image: 'micropigmentacion'
+  },
+  {
+    icon: Star,
+    title: 'Tratamientos Corporales',
+    description: 'Procedimientos enfocados en modelar la figura, reducir celulitis, mejorar la circulación y relajar el cuerpo.',
+    features: [
+      'Vela Shape',
+      'Venus Legacy',
+      'Mío Up',
+      'Presoterapia',
+      'Drenaje linfático manual',
+      'Masajes relajantes / descontracturantes',
+      'Mesoterapia corporal',
+      'Bronceado orgánico',
+      'Micropunción de estrías'
+    ],
+    image: 'corporales'
+  },
+  {
+    icon: Sun,
+    title: 'Depilación Definitiva',
+    description: 'Sistema láser avanzado que elimina el vello de forma progresiva, segura y duradera.',
+    features: [
+      'Depilación Láser Soprano'
+    ],
+    image: 'depilacion'
+  },
+  {
+    icon: Sparkles,
+    title: 'Láser Spectra',
+    description: 'Tecnología láser de última generación para rejuvenecimiento, eliminación de tatuajes y más.',
+    features: [
+      'Borrado de tatuajes',
+      'Hollywood Peel',
+      'Onicomicosis',
+      'Borrado de microblading'
+    ],
+    image: 'spectra'
+  },
+  {
+    icon: Zap,
+    title: 'Belleza Facial',
+    description: 'Tratamientos rápidos y efectivos para resaltar la mirada y armonizar el rostro.',
+    features: [
+      'Lifting y tinte de pestañas',
+      'Perfilado y laminado de cejas'
+    ],
+    image: 'belleza'
+  },
+  {
+    icon: Star,
+    title: 'Dermatología',
+    description: 'Procedimientos médico-estéticos para tratar lesiones de la piel y estimular la regeneración celular.',
+    features: [
+      'Extracción de lunares',
+      'Extracción de verrugas',
+      'Luz pulsada',
+      'Plasma rico en plaquetas (PRP)'
+    ],
+    image: 'dermatologia'
+  },
+  {
+    icon: Sun,
+    title: 'Flebología',
+    description: 'Tratamientos médicos para mejorar la salud y estética de las piernas mediante técnicas seguras.',
+    features: [
+      'Escleroterapia',
+      'Láser'
+    ],
+    image: 'flebologia'
+  },
+  {
+    icon: Sparkles,
+    title: 'Tratamientos Capilares',
+    description: 'Terapias regenerativas y de nutrición profunda para frenar la caída y estimular el crecimiento del cabello.',
+    features: [
+      'Plasma rico en plaquetas capilar (PRP capilar)',
+      'Mesoterapia capilar'
+    ],
+    image: 'capilar'
+  }
+];
 
   return (
     <section id="services" className="section-padding bg-praga-gray-light">
