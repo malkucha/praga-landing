@@ -74,7 +74,7 @@ const Navbar = ({ onNavigateToSucursal, onNavigateToServicios, onNavigateToLandi
         : 'bg-transparent'
     }`}>
       <div className="container-custom">
-        <div className="flex items-center h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button
             className="flex items-center focus:outline-none group"
@@ -113,7 +113,7 @@ const Navbar = ({ onNavigateToSucursal, onNavigateToServicios, onNavigateToLandi
                       
                       {/* Dropdown Menu */}
                       {isDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
+                        <div className="absolute top-full right-0 md:left-0 md:right-auto mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50">
                           <a
                             href="#locations"
                             onClick={handleDropdownItemClick}
