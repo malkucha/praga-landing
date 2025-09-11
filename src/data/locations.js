@@ -41,7 +41,7 @@ export const locations = [
     amenities: ['Estacionamiento gratuito', 'WiFi', 'Sala de espera climatizada', 'Música relajante']
   },
   {
-    id: 'zona-norte',
+    id: 'cerro',
     name: 'PRAGA | Cerro',
     address: 'Tristán Malbrán 4240, Cerro de las Rosas',
     phone: '+54 351 218-5804',

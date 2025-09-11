@@ -5,6 +5,9 @@ import { ArrowLeft } from 'lucide-react';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 
+// UI Components
+import ShareLinks from '../ui/ShareLinks';
+
 // Section Components
 import ServiciosHero from '../sections/servicios/ServiciosHero';
 import ServiciosCategory from '../sections/servicios/ServiciosCategory';
@@ -31,6 +34,15 @@ const ServiciosPage = ({ onNavigateBack, onNavigateToSucursal, onNavigateToServi
       
       {/* Main Content */}
       <main>
+        {/* Share Links Section */}
+        <section className="py-16 bg-praga-beige/30">
+          <div className="container-custom">
+            <div className="max-w-2xl mx-auto">
+              <ShareLinks type="servicios" />
+            </div>
+          </div>
+        </section>
+        
         {/* Services Categories */}
         {categories.map((category, index) => (
           <ServiciosCategory 
