@@ -82,18 +82,6 @@ const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal, onNavi
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
-        {/* Back Button - Fixed */}
-        <motion.button
-          onClick={onNavigateBack}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed top-24 left-8 z-50 flex items-center space-x-2 text-white hover:text-praga-gold transition-colors duration-300 group bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full"
-        >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
-          <span className="font-medium">Volver</span>
-        </motion.button>
-        
         {/* Hero Content */}
         <div className="relative z-10 container-custom pb-16 md:pb-20">
           <div className="max-w-4xl mx-auto text-center px-4">
@@ -101,11 +89,7 @@ const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal, onNavi
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-            >
-              <h1 className="h1-light font-bold mb-8">
-                {location.name}
-              </h1>
-              
+            >              
               <p className="text-xl text-praga-gray-light mb-12 leading-relaxed max-w-2xl mx-auto">
                 {location.description}
               </p>
