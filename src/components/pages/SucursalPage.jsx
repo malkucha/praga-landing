@@ -10,6 +10,7 @@ import Footer from '../layout/Footer';
 
 // Section Components
 import Appointments from '../sections/landing/Appointments';
+import Services from '../sections/landing/Services';
 
 // Data
 import { locations } from '../../data/locations';
@@ -176,6 +177,9 @@ const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal, onNavi
       
       {/* Main Content */}
       <main>
+
+        {/* Services Section */}
+        <Services onNavigateToServicios={onNavigateToServicios} />
 
         {/* Specialties Section */}
         {/* <SucursalSpecialties specialties={location.specialties} /> */}
