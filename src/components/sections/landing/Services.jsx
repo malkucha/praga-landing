@@ -105,7 +105,7 @@ const Services = ({ onNavigateToServicios }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 h-full border border-transparent hover:border-praga-gray-dark/20"
+                    className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 h-full border border-transparent hover:border-praga-gray-dark/20 flex flex-col"
                   >
                     {/* Service Icon */}
                     <div className="flex items-center justify-between mb-6">
@@ -132,11 +132,11 @@ const Services = ({ onNavigateToServicios }) => {
                     </p>
 
                     {/* Features */}
-                    <div className="grid grid-cols-2 gap-3 mb-8">
+                    <div className="grid grid-cols-2 gap-3 mb-8 flex-1">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2 group-hover:-translate-y-0.5 transition-transform duration-300" style={{transitionDelay: `${featureIndex * 50}ms`}}>
                           <div className="w-2 h-2 bg-gradient-to-br from-praga-gray to-praga-gray rounded-full transition-all duration-300 group-hover:scale-125"></div>
-                          <span className="text-sm text-praga-gray font-detail">{feature}</span>
+                          <span className="text-sm text-praga-gray-dark font-detail">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -144,7 +144,7 @@ const Services = ({ onNavigateToServicios }) => {
                     {/* CTA Button */}
                     <button 
                       onClick={onNavigateToServicios}
-                      className="w-full btn-secondary group-hover:bg-praga-gray group-hover:border-praga-gray group-hover:text-white transition-all duration-300"
+                      className="w-full btn-secondary group-hover:bg-praga-gray group-hover:border-praga-gray group-hover:text-white transition-all duration-300 mt-auto"
                     >
                       Más información
                     </button>

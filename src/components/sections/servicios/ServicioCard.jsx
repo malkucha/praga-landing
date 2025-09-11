@@ -30,7 +30,7 @@ const ServicioCard = ({ service, categoryName, categoryIcon: CategoryIcon }) => 
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-praga-gray-dark/20"
+      className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-praga-gray-dark/20 h-full flex flex-col"
     >
       {/* Service Image Placeholder */}
       <div className="relative h-48 bg-gradient-to-br from-praga-gray-light to-praga-gray/30 overflow-hidden">
@@ -55,24 +55,24 @@ const ServicioCard = ({ service, categoryName, categoryIcon: CategoryIcon }) => 
       </div>
 
       {/* Service Content */}
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         <h3 className="font-bold text-lg mb-3 text-praga-gray-dark group-hover:text-praga-gray transition-colors duration-300">
           {service.name}
         </h3>
         
-        <p className="text-praga-gray-dark text-sm leading-relaxed mb-4">
+        <p className="text-praga-gray-dark text-sm leading-relaxed mb-4 flex-1">
           {service.description}
         </p>
 
         {/* Category Tag */}
-        <div className="inline-flex items-center space-x-2 bg-praga-beige/50 rounded-full px-3 py-1 mb-4">
+        <div className="inline-flex items-center space-x-2 bg-praga-beige/50 rounded-full px-3 py-1 mb-4 w-fit">
           <span className="text-praga-gray-dark text-xs font-medium">
             {categoryName}
           </span>
         </div>
 
         {/* Action Button */}
-        <div className="relative">
+        <div className="relative mt-auto">
           <button
             onClick={() => setShowContactMenu(!showContactMenu)}
             className="w-full btn-secondary group-hover:bg-praga-gray group-hover:border-praga-gray group-hover:text-white transition-all duration-300 flex items-center justify-center space-x-2"
