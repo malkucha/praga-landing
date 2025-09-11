@@ -6,7 +6,6 @@ import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 
 // UI Components
-import ShareLinks from '../ui/ShareLinks';
 
 // Section Components
 import ServiciosHero from '../sections/servicios/ServiciosHero';
@@ -33,16 +32,7 @@ const ServiciosPage = ({ onNavigateBack, onNavigateToSucursal, onNavigateToServi
       <ServiciosHero />
       
       {/* Main Content */}
-      <main>
-        {/* Share Links Section */}
-        <section className="py-16 bg-praga-beige/30">
-          <div className="container-custom">
-            <div className="max-w-2xl mx-auto">
-              <ShareLinks type="servicios" />
-            </div>
-          </div>
-        </section>
-        
+      <main>        
         {/* Services Categories */}
         {categories.map((category, index) => (
           <ServiciosCategory 
