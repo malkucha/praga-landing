@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Tag, Clock, MapPin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { getFeaturedPromotions } from '../../data/promotions';
-import { locations } from '../../data/locations';
+import { getFeaturedPromotions } from '../../../data/promotions';
+import { locations } from '../../../data/locations';
 import { useState, useEffect } from 'react';
 
 const Promotions = () => {

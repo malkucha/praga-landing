@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Award, Users } from 'lucide-react';
-import quienesSomosImage from '../../assets/quienes-somos.jpg';
+import quienesSomosImage from '../../../assets/quienes-somos.jpg';
 
 const About = () => {
   const features = [

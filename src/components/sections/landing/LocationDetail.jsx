@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { MapPin, Phone, Clock, Users, Star, Calendar, ArrowLeft, MessageCircle, Navigation } from 'lucide-react';
-import { locations } from '../../data/locations';
-import { getPromotionsByLocation } from '../../data/promotions';
+import { locations } from '../../../data/locations';
+import { getPromotionsByLocation } from '../../../data/promotions';
 
 const LocationDetail = ({ locationId }) => {
   const [location, setLocation] = useState(null);

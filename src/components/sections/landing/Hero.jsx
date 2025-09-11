@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import logoGris from '../../assets/logo-praga-blanco.svg';
+import logoGris from '../../../assets/logo-praga-blanco.svg';
 
 const Hero = () => {
   return (

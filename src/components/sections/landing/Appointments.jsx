@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import { Calendar, Clock, MapPin, Phone, MessageCircle } from 'lucide-react';
-import { locations } from '../../data/locations';
+import { locations } from '../../../data/locations';
 
 const Appointments = ({ focusedLocation }) => {
   const [displayLocations, setDisplayLocations] = useState(locations);

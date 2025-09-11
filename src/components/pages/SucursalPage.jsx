@@ -7,20 +7,20 @@ import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 
 // Section Components
-import Appointments from '../sections/Appointments';
+import Appointments from '../sections/landing/Appointments';
 
 // Data
 import { locations } from '../../data/locations';
 import { getPromotionsByLocation } from '../../data/promotions';
 
 // Individual section components for this page
-import SucursalSpecialties from '../sections/SucursalSpecialties';
-import SucursalTeam from '../sections/SucursalTeam';
-import SucursalSchedule from '../sections/SucursalSchedule';
-import SucursalPromotions from '../sections/SucursalPromotions';
-import SucursalAmenities from '../sections/SucursalAmenities';
+import SucursalSpecialties from '../sections/sucursal/SucursalSpecialties';
+import SucursalTeam from '../sections/sucursal/SucursalTeam';
+import SucursalSchedule from '../sections/sucursal/SucursalSchedule';
+import SucursalPromotions from '../sections/sucursal/SucursalPromotions';
+import SucursalAmenities from '../sections/sucursal/SucursalAmenities';
 
-const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal }) => {
+const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal, onNavigateToServicios, onNavigateToLanding }) => {
   const [location, setLocation] = useState(null);
   const [locationPromotions, setLocationPromotions] = useState([]);
 
@@ -63,7 +63,12 @@ const SucursalPage = ({ locationId, onNavigateBack, onNavigateToSucursal }) => {
   return (
     <div className="sucursal-page">
       {/* Fixed Navigation */}
-      <Navbar onNavigateToSucursal={onNavigateToSucursal} isLanding={false} />
+      <Navbar 
+        onNavigateToSucursal={onNavigateToSucursal} 
+        onNavigateToServicios={onNavigateToServicios}
+        onNavigateToLanding={onNavigateToLanding}
+        isLanding={false} 
+      />
       
       {/* Hero Section with Location Image */}
       <section className="relative min-h-screen flex items-end justify-center overflow-hidden">

@@ -4,7 +4,7 @@ import logoHorizontal from '../../assets/iso-logo-praga-gris.svg';
 import logoHorizontalBlanco from '../../assets/iso-logo-praga-blanco.svg';
 import { locations } from '../../data/locations';
 
-const Navbar = ({ onNavigateToSucursal, isLanding }) => {
+const Navbar = ({ onNavigateToSucursal, onNavigateToServicios, onNavigateToLanding, isLanding }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -30,12 +30,12 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
   }, []);
 
   const navItems = [
-    { name: 'SERVICIOS', href: '#services' },
-    { name: 'PROMOCIONES', href: '#promotions' },
+    { name: 'SERVICIOS', href: '#services', action: 'services' },
+    // { name: 'PROMOCIONES', href: '#promotions' },
     { name: 'NOSOTROS', href: '#about' },
     { name: 'SUCURSALES', href: '#locations', hasDropdown: true },
     { name: 'TIENDA', href: '#shop' },
-    { name: 'TESTIMONIOS', href: '#testimonials' },
+    { name: 'EXPERIENCIAS', href: '#testimonials' },
   ];
 
   const handleSucursalClick = (locationId) => {
@@ -44,6 +44,24 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
     }
     setIsDropdownOpen(false);
     setIsMobileMenuOpen(false);
+  };
+
+  const handleNavItemClick = (item) => {
+    if (item.action === 'services' && onNavigateToServicios) {
+      onNavigateToServicios();
+      setIsMobileMenuOpen(false);
+    } else if (item.href && isLanding) {
+      // Scroll to section if on landing page
+      const element = document.querySelector(item.href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setIsMobileMenuOpen(false);
+    } else if (item.href && !isLanding && onNavigateToLanding) {
+      // Navigate to landing page with target section if not on landing
+      onNavigateToLanding(item.href);
+      setIsMobileMenuOpen(false);
+    }
   };
 
   const handleDropdownItemClick = () => {
@@ -64,8 +82,8 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
             onClick={() => {
               if (isLanding) {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-              } else if (onNavigateToSucursal) {
-                onNavigateToSucursal(null);
+              } else if (onNavigateToLanding) {
+                onNavigateToLanding();
               }
             }}
             aria-label="Ir a la página de inicio"
@@ -117,14 +135,14 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                     )}
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
+                  <button
+                    onClick={() => handleNavItemClick(item)}
                     className={`text-sm font-agrandir font-medium transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white/20 backdrop-blur-sm ${
                       isScrolled ? 'text-praga-gray-x-dark' : 'text-white'
                     }`}
                   >
                     {item.name}
-                  </a>
+                  </button>
                 )}
               </div>
             ))}
@@ -203,13 +221,12 @@ const Navbar = ({ onNavigateToSucursal, isLanding }) => {
                       </div>
                     </div>
                   ) : (
-                    <a
-                      href={item.href}
-                      className="block text-praga-gray-x-dark hover:bg-white/20 backdrop-blur-sm transition-all duration-300 font-medium py-2 px-3 rounded-lg"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                    <button
+                      onClick={() => handleNavItemClick(item)}
+                      className="block text-praga-gray-x-dark hover:bg-white/20 backdrop-blur-sm transition-all duration-300 font-medium py-2 px-3 rounded-lg w-full text-left"
                     >
                       {item.name}
-                    </a>
+                    </button>
                   )}
                 </div>
               ))}

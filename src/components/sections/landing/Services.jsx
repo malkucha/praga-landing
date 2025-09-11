@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import { Sparkles, Zap, Star, Sun, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
-import { locations } from '../../data/locations';
+import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { locations } from '../../../data/locations';
+import { getFeaturedServices } from '../../../data/services';
 
-const Services = () => {
+const Services = ({ onNavigateToServicios }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(2);
   const [showConsultaMenu, setShowConsultaMenu] = useState(false);
@@ -62,116 +63,9 @@ const Services = () => {
     window.open(url, '_blank');
     setShowConsultaMenu(false);
   };
-const services = [
-  {
-    icon: Sparkles,
-    title: 'Estética Facial',
-    description: 'Tratamientos diseñados para mejorar la salud y apariencia de la piel, devolviéndole luminosidad, firmeza y frescura.',
-    features: [
-      'Limpieza facial profunda',
-      'Peeling',
-      'Dermapen',
-      'Dermaplaning',
-      'Exosomas',
-      'Mesoterapia facial',
-      'Radiofrecuencia fraccionada',
-      'Ácido hialurónico',
-      'Bioestimuladores de colágeno',
-      'Toxina botulínica (botox)'
-    ],
-    image: 'facial'
-  },
-  {
-    icon: Zap,
-    title: 'Micropigmentación',
-    description: 'Técnicas semipermanentes que realzan rasgos faciales como labios y cejas, brindando definición, color y naturalidad.',
-    features: [
-      'Micropigmentación de labios',
-      'Micropigmentación de cejas'
-    ],
-    image: 'micropigmentacion'
-  },
-  {
-    icon: Star,
-    title: 'Tratamientos Corporales',
-    description: 'Procedimientos enfocados en modelar la figura, reducir celulitis, mejorar la circulación y relajar el cuerpo.',
-    features: [
-      'Vela Shape',
-      'Venus Legacy',
-      'Mío Up',
-      'Presoterapia',
-      'Drenaje linfático manual',
-      'Masajes relajantes / descontracturantes',
-      'Mesoterapia corporal',
-      'Bronceado orgánico',
-      'Micropunción de estrías'
-    ],
-    image: 'corporales'
-  },
-  {
-    icon: Sun,
-    title: 'Depilación Definitiva',
-    description: 'Sistema láser avanzado que elimina el vello de forma progresiva, segura y duradera.',
-    features: [
-      'Depilación Láser Soprano'
-    ],
-    image: 'depilacion'
-  },
-  {
-    icon: Sparkles,
-    title: 'Láser Spectra',
-    description: 'Tecnología láser de última generación para rejuvenecimiento, eliminación de tatuajes y más.',
-    features: [
-      'Borrado de tatuajes',
-      'Hollywood Peel',
-      'Onicomicosis',
-      'Borrado de microblading'
-    ],
-    image: 'spectra'
-  },
-  {
-    icon: Zap,
-    title: 'Belleza Facial',
-    description: 'Tratamientos rápidos y efectivos para resaltar la mirada y armonizar el rostro.',
-    features: [
-      'Lifting y tinte de pestañas',
-      'Perfilado y laminado de cejas'
-    ],
-    image: 'belleza'
-  },
-  {
-    icon: Star,
-    title: 'Dermatología',
-    description: 'Procedimientos médico-estéticos para tratar lesiones de la piel y estimular la regeneración celular.',
-    features: [
-      'Extracción de lunares',
-      'Extracción de verrugas',
-      'Luz pulsada',
-      'Plasma rico en plaquetas (PRP)'
-    ],
-    image: 'dermatologia'
-  },
-  {
-    icon: Sun,
-    title: 'Flebología',
-    description: 'Tratamientos médicos para mejorar la salud y estética de las piernas mediante técnicas seguras.',
-    features: [
-      'Escleroterapia',
-      'Láser'
-    ],
-    image: 'flebologia'
-  },
-  {
-    icon: Sparkles,
-    title: 'Tratamientos Capilares',
-    description: 'Terapias regenerativas y de nutrición profunda para frenar la caída y estimular el crecimiento del cabello.',
-    features: [
-      'Plasma rico en plaquetas capilar (PRP capilar)',
-      'Mesoterapia capilar'
-    ],
-    image: 'capilar'
-  }
-];
+
+  // Obtener servicios desde el archivo de datos
+  const services = getFeaturedServices();
 
   return (
     <section id="services" className="section-padding bg-praga-gray-light">
@@ -248,7 +142,10 @@ const services = [
                     </div>
 
                     {/* CTA Button */}
-                    <button className="w-full btn-secondary group-hover:bg-praga-gray group-hover:border-praga-gray group-hover:text-white transition-all duration-300">
+                    <button 
+                      onClick={onNavigateToServicios}
+                      className="w-full btn-secondary group-hover:bg-praga-gray group-hover:border-praga-gray group-hover:text-white transition-all duration-300"
+                    >
                       Más información
                     </button>
                   </motion.div>

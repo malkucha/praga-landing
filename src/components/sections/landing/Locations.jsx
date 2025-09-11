@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, Navigation, ArrowRight } from 'lucide-react';
-import { locations } from '../../data/locations';
+import { locations } from '../../../data/locations';
 
 const Locations = ({ onNavigateToSucursal }) => {
   return (
@@ -102,7 +102,7 @@ const Locations = ({ onNavigateToSucursal }) => {
                     className="btn-secondary text-center flex-1 flex items-center justify-center text-sm px-4 py-3 bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/30"
                   >
                     <Navigation className="w-4 h-4 mr-1" />
-                    <span className="hidden sm:inline">Ver en </span>Maps
+                    <span className="hidden sm:inline">Ver en </span> Maps
                   </a>
                 </div>
                 
