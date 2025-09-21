@@ -63,7 +63,7 @@ const LandingPage = ({ onNavigateToSucursal, onNavigateToServicios, targetSectio
         <Testimonials />
         
         {/* Shop Section - Productos complementarios */}
-        <Shop />
+        {/* <Shop /> */}
         
         {/* Appointments Section - Call to action final */}
         <Appointments />

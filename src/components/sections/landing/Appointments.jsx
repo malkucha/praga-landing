@@ -2,11 +2,13 @@ import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import { Calendar, Clock, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { locations } from '../../../data/locations';
+import { useGoogleAds, CONVERSION_LABELS } from '../../../hooks/useGoogleAds';
 
 const Appointments = ({ focusedLocation }) => {
   const [displayLocations, setDisplayLocations] = useState(locations);
   const [showWAMenu, setShowWAMenu] = useState(false);
   const waMenuRef = useRef(null);
+  const { trackConversion, trackEvent } = useGoogleAds();
 
   useEffect(() => {
     const newDisplayLocations = focusedLocation 
@@ -14,6 +16,15 @@ const Appointments = ({ focusedLocation }) => {
       : locations;
     setDisplayLocations(newDisplayLocations);
   }, [focusedLocation]);
+
+  const handlePhoneCall = (location) => {
+    // Trackear conversión de llamada telefónica
+    trackConversion(CONVERSION_LABELS.PHONE_CALL);
+    trackEvent('phone_contact', {
+      location: location.name,
+      event_label: location.name
+    });
+  };
 
   // Cerrar menú si se hace click fuera
   useEffect(() => {
@@ -28,6 +39,13 @@ const Appointments = ({ focusedLocation }) => {
   }, [showWAMenu]);
 
   const handleWhatsAppClick = (location) => {
+    // Trackear conversión de WhatsApp
+    trackConversion(CONVERSION_LABELS.WHATSAPP_CLICK);
+    trackEvent('whatsapp_contact', {
+      location: location.name,
+      event_label: location.name
+    });
+    
     const message = `Hola! Me gustaría reservar un turno en ${location.name}. ¿Podrían ayudarme con la disponibilidad?`;
     const url = `https://wa.me/${location.whatsapp.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -170,6 +188,7 @@ const Appointments = ({ focusedLocation }) => {
                   <a
                     key={location.name}
                     href={`tel:${location.phone}`}
+                    onClick={() => handlePhoneCall(location)}
                     className="btn-secondary inline-block font-semibold hover:scale-105 transition-all duration-300"
                   >
                     {location.name.replace('PRAGA | ', '')} - {location.phone}
