@@ -1,7 +1,44 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import { MessageCircle } from 'lucide-react';
+import { locations } from '../../../data/locations';
 import logoGris from '../../../assets/logo-praga-blanco.svg';
 
 const Hero = () => {
+  const [showConsultaMenu, setShowConsultaMenu] = useState(false);
+  const consultaMenuRef = useRef(null);
+  const buttonRef = useRef(null);
+  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0, width: 0 });
+
+  useEffect(() => {
+    if (!showConsultaMenu) return;
+    // Calcular posición del menú respecto al botón
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      // Mostrar el menú por arriba del botón
+      setMenuPosition({
+        top: rect.top + window.scrollY, // sin separación extra
+        left: rect.left + rect.width / 2 + window.scrollX,
+        width: rect.width
+      });
+    }
+    const handleClickOutside = (e) => {
+      if (consultaMenuRef.current && !consultaMenuRef.current.contains(e.target) && buttonRef.current && !buttonRef.current.contains(e.target)) {
+        setShowConsultaMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showConsultaMenu]);
+
+  const handleConsultaClick = (location) => {
+    const message = `Hola! Me gustaría reservar un turno en ${location.name}. ¿Podrían ayudarme?`;
+    const url = `https://wa.me/${location.whatsapp.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    setShowConsultaMenu(false);
+  };
+
   return (
     <section 
       id="hero" 
@@ -58,7 +95,43 @@ const Hero = () => {
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <a href="#services" className="btn-primary w-full sm:w-auto text-center">Nuestros servicios</a>
-              <a href="#appointments" className="btn-secondary w-full sm:w-auto text-center bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/30">Reservá tu turno</a>
+              {/* Botón Consulta personalizada */}
+              <div className="relative w-full sm:w-auto">
+                <button
+                  ref={buttonRef}
+                  type="button"
+                  onClick={() => setShowConsultaMenu(!showConsultaMenu)}
+                  className="btn-secondary w-full sm:w-auto text-center bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/30"
+                >
+                  Reservá tu turno
+                </button>
+                {showConsultaMenu && createPortal(
+                  <div
+                    ref={consultaMenuRef}
+                    className="fixed bg-white rounded-2xl shadow-2xl border border-praga-gray-light/20 p-4 min-w-[220px] flex flex-col gap-2 z-[9999] animate-fade-in"
+                    style={{
+                      top: menuPosition.top,
+                      left: menuPosition.left,
+                      transform: 'translate(-50%, -100%)', // arriba y centrado
+                      opacity: 1,
+                      transition: 'opacity 0.2s ease-out'
+                    }}
+                  >
+                    <div className="text-praga-gray-dark font-agrandir font-semibold mb-2 text-center uppercase text-xs">Elegí sucursal</div>
+                    {locations.map((location) => (
+                      <button
+                        key={location.id}
+                        onClick={() => handleConsultaClick(location)}
+                        className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-praga-beige/40 text-praga-gray-dark md:text-praga-gray md:hover:text-praga-gray-dark transition-colors font-medium text-sm"
+                      >
+                        <MessageCircle className="w-5 h-5 text-green-500" />
+                        <span>{location.name.replace('PRAGA | ', '')}</span>
+                      </button>
+                    ))}
+                  </div>,
+                  document.body
+                )}
+              </div>
             </div>
             <div className="mt-4 text-center">
               <a href="#locations" className="inline-flex items-center text-white hover:text-yellow-300 transition-colors duration-300 group">
