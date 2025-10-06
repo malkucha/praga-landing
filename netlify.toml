@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = "dist"
 
 # Configuración para Next.js con Static Export
 [build.environment]
