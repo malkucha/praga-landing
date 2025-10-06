@@ -33,7 +33,7 @@ const Navbar = ({ onNavigateToSucursal, onNavigateToServicios, onNavigateToLandi
     { name: 'SERVICIOS', href: '#services', action: 'services' },
     { name: 'NOSOTROS', href: '#about' },
     { name: 'SUCURSALES', href: '#locations', hasDropdown: true },
-    { name: 'PRODUCTOS', href: 'https://pragaestetica.mitiendanube.com/' },
+    { name: 'PRODUCTOS', href: '#shop' },
     { name: 'EXPERIENCIAS', href: '#testimonials' },
   ];
 
