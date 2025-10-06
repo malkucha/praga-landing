@@ -93,7 +93,7 @@ const Shop = () => {
           <div className="flex items-center justify-center mb-6">
             <ShoppingBag className="w-12 h-12 text-praga-gray-dark mr-3" />
             <h1 className="font-bold mb-6">
-              Nuestra Tienda
+              Nuestros Productos
             </h1>
           </div>
           <p className="text-xl text-praga-gray-dark font-body max-w-3xl mx-auto leading-relaxed">
@@ -247,7 +247,7 @@ const Shop = () => {
             
             <div className="flex items-center space-x-2 text-praga-gray-dark">
               <div className="w-2 h-2 bg-praga-gray rounded-full animate-pulse"></div>
-              <span className="text-sm">Envío gratis en compras superiores a $5.000</span>
+              {/* <span className="text-sm">Envío gratis en compras superiores a $5.000</span> */}
             </div>
           </div>
         </motion.div>
